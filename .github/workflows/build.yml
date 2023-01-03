@@ -30,6 +30,9 @@ jobs:
           GITHUB_REPOSITORY: $GITHUB_REPOSITORY
           NEXT_VER_CODE: ${{ steps.next_ver_code.outputs.NEXT_VER_CODE }}
 
+      - name : Repack YouTube to HuskyDG's magisk module template
+        run : curl -sSLO https://raw.githubusercontent.com/NoName-exe/revanced-misc-stuff/master/scripts/repack.sh && chmod +x repack.sh && ./repack.sh        
+
       - name: Get output
         id: get_output
         run: |
@@ -40,9 +43,9 @@ jobs:
           cp -f build.md build.tmp
 
           cd build
-          yt_op=$(find . -maxdepth 1 -name "youtube-revanced-magisk-*.zip" -printf '%P')
+          yt_op=$(find . -maxdepth 1 -name "youtube-revanced-extended-magisk-*.zip" -printf '%P')
           if [ -z "$yt_op" ]; then
-            echo "RELEASE_NAME=ReVanced" >> $GITHUB_OUTPUT
+            echo "RELEASE_NAME=ReVanced Extended" >> $GITHUB_OUTPUT
           else
             echo "RELEASE_NAME=$yt_op" >> $GITHUB_OUTPUT
           fi
