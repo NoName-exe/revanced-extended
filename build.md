@@ -1,26 +1,20 @@
 CLI: revanced-cli-2.20.0-all.jar  
-Integrations: app-release-unsigned-v0.91.3.apk  
-Patches: revanced-patches-2.152.6.jar  
+Integrations: app-release-unsigned-v0.92.3.apk  
+Patches: revanced-patches-2.153.0.jar  
 
 YouTube
 ==
-- add `dislikes with separator` settings https://github.com/inotia00/ReVanced_Extended/issues/101
-- temporarily remove `hide suggestions` settings (because of A/B test)
+- feat(youtube): add `save-video-speed` settings
+- feat(youtube): add `custom-seekbar-color` patch
+
+- fix: `LayoutOverride` patch sometimes causes crash
+- fix: `TabletLayoutLinks` function sometimes causes resource leak in ReVanced settings
 
 - Crowdin Translation Update
-`Arabic`, `French`, `Hungarian`, `Indonesian`, `Russian`, `Spanish`, `Turkish`, `Vietnamese`
-
-YouTube Music
-==
-- Crowdin Translation Update
-`Greek`
-
-ETC
-==
-- add support YouTube v18.01.33, v18.01.35
+`Arabic`, `Bengali`, `Chinese Simplified`, `Chinese Traditional`, `French`, `Indonesian`, `Korean`, `Russian`, `Spanish`, `Turkish`, `Ukrainian`, `Vietnamese`
 
 ※ Compatible ReVanced Manager: v0.0.51 / v0.0.52
-
+※ If you want to contribute to the translation, refer this [documentations](https://telegra.ph/How-to-contribute-to-Crowdin-translations-via-upload-of-stringsxml-file-11-10)
   
 **App Versions:**  
 YouTube: 17.49.37  
