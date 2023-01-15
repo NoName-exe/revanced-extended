@@ -4,7 +4,7 @@ ui_print ""
 if [ $ARCH = "arm" ]; then
 	alias cmpr='$MODPATH/bin/arm/cmpr'
 	ARCH_LIB=armeabi-v7a
-elif [ $ARCH = "arm64" ]; then
+elif [ $ARCH = "arm64" ] || [ $ARCH = "x64" ]; then
 	ARCH_LIB=arm64-v8a
 	alias cmpr='$MODPATH/bin/arm64/cmpr'
 else
@@ -26,7 +26,7 @@ am force-stop __PKGNAME
 
 BASEPATH=$(basepath)
 if [ -n "$BASEPATH" ] && cmpr $BASEPATH $MODPATH/__PKGNAME.apk; then
-	ui_print "- Updating with stock APK is not needed"
+	ui_print "- __PKGNAME is up-to-date"
 else
 	ui_print "- Updating __PKGNAME (v__PKGVER)"
 	set_perm $MODPATH/__PKGNAME.apk 1000 1000 644 u:object_r:apk_data_file:s0
@@ -40,7 +40,7 @@ else
 	fi
 fi
 BASEPATHLIB=${BASEPATH%base.apk}lib/${ARCH}
-if ! ls ${BASEPATHLIB}/*.so; then
+if [ -z "$(ls -A1 ${BASEPATHLIB})" ]; then
 	ui_print "- Extracting native libs"
 	if ! op=$(unzip -j $MODPATH/__PKGNAME.apk lib/${ARCH_LIB}/* -d ${BASEPATHLIB} 2>&1); then
 		ui_print "ERROR: extracting native libs failed"
