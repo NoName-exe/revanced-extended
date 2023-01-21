@@ -43,8 +43,7 @@ jobs:
           echo "${DELIM}" >> "$GITHUB_OUTPUT"
           cp -f build.md build.tmp
 
-          cd build
-          yt_op=$(find . -maxdepth 1 -name "youtube-revanced-extended-magisk-*.zip" -printf '%P')
+          yt_op=$(find build -maxdepth 1 -name "youtube-*-magisk-*.zip" -printf '%P\n')
           if [ -z "$yt_op" ]; then
             echo "RELEASE_NAME=ReVanced Extended" >> $GITHUB_OUTPUT
           else
@@ -144,3 +143,4 @@ jobs:
         with:
           name: logs
           path: logs
+          if-no-files-found: ignore
