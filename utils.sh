@@ -72,7 +72,7 @@ set_prebuilts() {
 	RV_CLI_JAR=$(find "$PREBUILTS_DIR" -maxdepth 1 -name "revanced-cli-*.jar" | tail -n1)
 	[ "$RV_CLI_JAR" ] || abort "revanced cli not found"
 	log "CLI: ${RV_CLI_JAR#"$PREBUILTS_DIR/"}"
-	RV_INTEGRATIONS_APK=$(find "$PREBUILTS_DIR" -maxdepth 1 -name "revanced-integrations-*.apk" | tail -n1)
+	RV_INTEGRATIONS_APK=$(find "$PREBUILTS_DIR" -maxdepth 1 -name "revanced-integrations-*.apk" -o -name "app-release-unsigned.apk" | tail -n1)
 	[ "$RV_INTEGRATIONS_APK" ] || abort "revanced integrations not found"
 	log "Integrations: ${RV_INTEGRATIONS_APK#"$PREBUILTS_DIR/"}"
 	RV_PATCHES_JAR=$(find "$PREBUILTS_DIR" -maxdepth 1 -name "revanced-patches-*.jar" | tail -n1)
