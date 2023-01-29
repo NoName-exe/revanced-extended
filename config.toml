@@ -8,8 +8,9 @@ patches-source = "inotia00/revanced-patches"
 integrations-source = "inotia00/revanced-integrations"
 rv-brand = "ReVanced eXtended"
 
+# add 'enabled = false' for not patching a specific app
 [YouTube]
-enabled = true # add 'enabled = false' key to entries to not build them
+enabled = true
 build-mode = "both" # 'both', 'apk' or 'module'
 excluded-patches = "" # whitespace seperated list of patches to exclude (multiline strings are not supported)
 included-patches = "" # whitespace seperated list of patches to include
