@@ -1,25 +1,30 @@
 CLI: revanced-cli-2.21.0-all.jar  
 Integrations: app-release-unsigned.apk  
-Patches: revanced-patches-2.157.1.jar  
+Patches: revanced-patches-2.158.1.jar  
 
 YouTube
 ==
-- add `force-vp9-codec` patch (Experimental Flag) https://github.com/inotia00/ReVanced_Extended/issues/173
-- fix: `hide suggestions` setting does not work in search results (a/b test)
-- fix: `hide button container` setting does not work as intended in certain circumstances https://github.com/inotia00/ReVanced_Extended/issues/183
-- fix: unable to play YouTube on PlayStore (root environment)
-- remove some unused language resources
+- remove `custom-video-buffer` patch: no longer valid in the latest YT  https://github.com/inotia00/ReVanced_Extended/issues/198
+- fix: `force-vp9-codec` patch applied to wrong method
+- fix: default video speed not applied in certain circumstances
+- fix: default video quality not applied in portrait video https://github.com/inotia00/ReVanced_Extended/issues/1
+- refactor `custom-branding-icon` patch
 
 - crowdin translation update
-`Arabic`, `Chinese Simplified`, `French`, `Greek`, `Indonesian`, `Japanese`, `Korean`, `Russian`, `Spanish`
+`Arabic`, `Chinese Simplified`, `French`, `Greek`, `Indonesian`, `Japanese`, `Korean`, `Russian`, `Spanish`, `Vietnamese`
+
+YouTube Music
+==
+- patch renamed
+: `custom-branding-music-red` → `custom-branding-music-afn-red`
+- add `custom-branding-music-afn-blue` patch
 
 ETC
 ==
-- add support YouTube v18.03.36, v18.04.35
-- reflect changes in the official repo
+- bump revanced-patches-v2.158.0
 
 ※ Compatible ReVanced Manager: v0.0.53
-※ If you want to contribute to the translation, refer bellow
+※ If you want to contribute to the translation, refer below
 
 [Crowdin translation]
 - [european countries](https://crowdin.com/project/revancedextendedeu)
