@@ -39,16 +39,27 @@ pr() { echo -e "\033[0;32m[+] ${1}\033[0m"; }
 
 get_prebuilts() {
 	pr "Getting prebuilts"
-	local rv_cli_url rv_integrations_url rv_patches rv_patches_changelog rv_patches_dl rv_patches_url
+	local rv_cli_url rv_integrations_url rv_patches rv_patches_changelog rv_patches_dl rv_patches_url rv_integrations_rel rv_patches_rel
 	rv_cli_url=$(gh_req "https://api.github.com/repos/j-hc/revanced-cli/releases/latest" - | json_get 'browser_download_url') || return 1
 	RV_CLI_JAR="${PREBUILTS_DIR}/${rv_cli_url##*/}"
 	log "CLI: ${rv_cli_url##*/}"
 
-	rv_integrations_url=$(gh_req "https://api.github.com/repos/${INTEGRATIONS_SRC}/releases/latest" - | json_get 'browser_download_url')
+	if [ "$CONF_INTEGRATIONS_VER" ]; then
+		rv_integrations_rel="https://api.github.com/repos/${INTEGRATIONS_SRC}/releases/tags/${CONF_INTEGRATIONS_VER}"
+	else
+		rv_integrations_rel="https://api.github.com/repos/${INTEGRATIONS_SRC}/releases/latest"
+	fi
+	if [ "$CONF_PATCHES_VER" ]; then
+		rv_patches_rel="https://api.github.com/repos/${PATCHES_SRC}/releases/tags/${CONF_PATCHES_VER}"
+	else
+		rv_patches_rel="https://api.github.com/repos/${PATCHES_SRC}/releases/latest"
+	fi
+
+	rv_integrations_url=$(gh_req "$rv_integrations_rel" - | json_get 'browser_download_url')
 	RV_INTEGRATIONS_APK="${PREBUILTS_DIR}/${rv_integrations_url##*/}"
 	log "Integrations: ${rv_integrations_url##*/}"
 
-	rv_patches=$(gh_req "https://api.github.com/repos/${PATCHES_SRC}/releases/latest" -)
+	rv_patches=$(gh_req "$rv_patches_rel" -)
 	rv_patches_changelog=$(echo "$rv_patches" | json_get 'body' | sed 's/\(\\n\)\+/\\n/g')
 	rv_patches_dl=$(json_get 'browser_download_url' <<<"$rv_patches")
 	RV_PATCHES_JSON="${PREBUILTS_DIR}/patches-$(json_get 'tag_name' <<<"$rv_patches").json"
@@ -68,9 +79,6 @@ get_prebuilts() {
 		if [ "$(uname -m)" = aarch64 ]; then arch=arm64; else arch=arm; fi
 		dl_if_dne ${TEMP_DIR}/aapt2 https://github.com/rendiix/termux-aapt/raw/main/prebuilt-binary/${arch}/aapt2
 	fi
-}
-
-get_cmpr() {
 	mkdir -p ${MODULE_TEMPLATE_DIR}/bin/arm64 ${MODULE_TEMPLATE_DIR}/bin/arm
 	dl_if_dne "${MODULE_TEMPLATE_DIR}/bin/arm64/cmpr" "https://github.com/j-hc/cmpr/releases/latest/download/cmpr-arm64-v8a"
 	dl_if_dne "${MODULE_TEMPLATE_DIR}/bin/arm/cmpr" "https://github.com/j-hc/cmpr/releases/latest/download/cmpr-armeabi-v7a"
@@ -156,13 +164,14 @@ dl_apkmirror() {
 }
 get_apkmirror_vers() {
 	local apkmirror_category=$1 allow_alpha_version=$2
-	local vers
+	local vers apkm_resp
 	apkm_resp=$(req "https://www.apkmirror.com/uploads/?appcategory=${apkmirror_category}" -)
 	# apkm_name=$(echo "$apkm_resp" | sed -n 's;.*Latest \(.*\) Uploads.*;\1;p')
 	vers=$(sed -n 's;.*Version:</span><span class="infoSlide-value">\(.*\) </span>.*;\1;p' <<<"$apkm_resp")
 	if [ "$allow_alpha_version" = false ]; then
 		local IFS=$'\n'
 		vers=$(grep -iv "\(beta\|alpha\)" <<<"$vers")
+		local v
 		local r_vers=()
 		for v in $vers; do
 			grep -iq "${v} \(beta\|alpha\)" <<<"$apkm_resp" || r_vers+=("$v")
@@ -177,11 +186,12 @@ get_apkmirror_pkg_name() { req "$1" - | sed -n 's;.*id=\(.*\)" class="accent_col
 
 # -------------------- uptodown --------------------
 get_uptodown_resp() { req "${1}/versions" -; }
-get_uptodown_vers() { sed -n 's;\(^.*\) <span>.*</span>.*;\1;p' <<<"$1"; }
+get_uptodown_vers() { sed -n 's;.*version>\(.*\)<\/span>$;\1;p' <<<"$1"; }
 dl_uptodown() {
 	local uptwod_resp=$1 version=$2 output=$3
-	url=$(echo "$uptwod_resp" | grep "${version} <span>" -B 1 | head -1 | sed -n 's;.*data-url="\(.*\)".*;\1;p')
-	url=$(req "$url" - | sed -n 's;.*data-url="\(.*\)".*;\1;p')
+	local url
+	url=$(echo "$uptwod_resp" | grep "${version}<\/span>" -B 2 | head -1 | sed -n 's;.*data-url="\(.*\)".*;\1;p') || return 1
+	url=$(req "$url" - | sed -n 's;.*data-url="\(.*\)".*;\1;p') || return 1
 	req "$url" "$output"
 }
 get_uptodown_pkg_name() {
@@ -305,7 +315,7 @@ build_rv() {
 		build_mode_arr=(apk module)
 	fi
 
-	local patcher_args patched_apk
+	local patcher_args patched_apk build_mode
 	for build_mode in "${build_mode_arr[@]}"; do
 		patcher_args=("${p_patcher_args[@]}")
 		pr "Building '${app_name}' (${arch}) in '$build_mode' mode"
@@ -346,7 +356,7 @@ build_rv() {
 
 		uninstall_sh "$pkg_name" "$base_template"
 		service_sh "$pkg_name" "$version" "$base_template"
-		customize_sh "$pkg_name" "$version" "$base_template"
+		customize_sh "$pkg_name" "$version" "$arch" "$base_template"
 		module_prop \
 			"${args[module_prop_name]}" \
 			"${app_name} ${RV_BRAND}" \
@@ -371,7 +381,13 @@ join_args() {
 uninstall_sh() { echo "${UNINSTALL_SH//__PKGNAME/$1}" >"${2}/uninstall.sh"; }
 customize_sh() {
 	local s="${CUSTOMIZE_SH//__PKGNAME/$1}"
-	echo "${s//__PKGVER/$2}" >"${3}/customize.sh"
+	# shellcheck disable=SC2016,SC2001
+	if [ "$3" = "arm64-v8a" ]; then
+		s=$(sed 's/#arm$/abort "ERROR: Wrong arch\nYour device: arm\nModule: arm64"/g' <<<"$s")
+	elif [ "$3" = "arm-v7a" ]; then
+		s=$(sed 's/#arm64$/abort "ERROR: Wrong arch\nYour device: arm64\nModule: arm"/g' <<<"$s")
+	fi
+	echo "${s//__PKGVER/$2}" >"${4}/customize.sh"
 }
 service_sh() {
 	local s="${SERVICE_SH//__PKGNAME/$1}"
