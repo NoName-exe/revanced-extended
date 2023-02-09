@@ -77,7 +77,7 @@ am force-stop __PKGNAME
 ui_print "- Optimizing __PKGNAME"
 cmd package compile --reset __PKGNAME &
 
-ui_print "* Cleanup"
+ui_print "- Cleanup"
 rm -rf $MODPATH/bin $MODPATH/__PKGNAME.apk $NVBASE/__PKGNAME_rv.apk
 for s in "uninstall.sh" "service.sh"; do
 	sed -i "2 i\NVBASE=${NVBASE}" $MODPATH/$s
