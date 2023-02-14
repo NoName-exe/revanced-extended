@@ -1,25 +1,28 @@
 CLI: revanced-cli-2.21.0-all.jar  
-Integrations: revanced-integrations-0.95.6.apk  
-Patches: revanced-patches-2.159.6.jar  
+Integrations: revanced-integrations-0.96.1.apk  
+Patches: revanced-patches-2.160.1.jar  
 
 YouTube
 ==
-- add `Hide shorts player join button` settings https://github.com/inotia00/ReVanced_Extended/issues/151#issuecomment-1423486747
-- refactor: `Hide info panels` setting now removes information panels in Shorts player https://github.com/inotia00/ReVanced_Extended/issues/151#issuecomment-1423486747
-- refactor: `Disable pip mode in shorts player` (Experimental Flags) setting
-- refactor(youtube/general-ads): move settings to correct preference screens
+- remove `disable-shorts-player-pip` patch (Integrated into `minimized-playback` patch https://github.com/revanced/revanced-patches/commit/cd48030cada3666d0159ad25711c20045a8a70c7)
+- fix: `microg-support` patch is sometimes broken
+- fix: `Hide Gray Separator` setting hides unintended layout https://github.com/inotia00/ReVanced_Extended/issues/236
+
 - crowdin translation update
-`Arabic`, `French`, `German`, `Greek`, `Italian`, `Japanese`, `Korean`, `Polish`, `Portuguese (Brazilian)`, `Russian`, `Spanish`, `Vietnamese`
+`Arabic`, `Azerbaijani`, `Belarusian`, `Bengali`, `Indonesian`, `Italian`, `Japanese`, `Polish`, `Portuguese (Brazilian)`, `Russian`, `Spanish`, `Turkish`, `Ukrainian`, `Vietnamese`
+
+YouTube Music
+==
+- cleanup
 
 ETC
 ==
-- add suport YouTube v18.04.43, v18.05.35
-- dropped support for YouTube outside of v18.04.43, v18.05.35
+- add suport YouTube v18.05.40
+- dropped support YouTube v18.04.43, v18.05.35
 
-- build: update kotlin dependencies
-- refactor: remove unnecessary `locale-config-fix` patch
+- build: bump patcher dependency version
 
-※ Compatible ReVanced Manager: v0.0.54
+※ Compatible ReVanced Manager: v0.0.55
 ※ If you want to contribute to the translation, refer below
 
 [Crowdin translation]
@@ -27,9 +30,9 @@ ETC
 - [other countries](https://crowdin.com/project/revancedextended)
   
 **App Versions:**  
-YouTube-Music (arm64-v8a): 5.43.55  
-YouTube: 18.05.35  
+YouTube: 18.05.40  
 YouTube-Music (arm-v7a): 5.43.55  
+YouTube-Music (arm64-v8a): 5.43.55  
 
 Install [Vanced MicroG](https://github.com/inotia00/VancedMicroG/releases) to be able to use non-root YouTube or YouTube-Music  
 
