@@ -14,11 +14,11 @@ else
 fi
 set_perm_recursive $MODPATH/bin 0 0 0755 0777
 
-grep __PKGNAME /proc/mounts | while read -r line; do
+su -Mc grep __PKGNAME /proc/mounts | while read -r line; do
 	ui_print "- Un-mount"
 	mp=${line#* }
 	mp=${mp%% *}
-	umount -l ${mp%%\\*}
+	su -Mc umount -l ${mp%%\\*}
 done
 am force-stop __PKGNAME
 
@@ -37,13 +37,10 @@ fi
 if [ $INS = true ]; then
 	ui_print "- Updating __PKGNAME (v__PKGVER)"
 	set_perm $MODPATH/__PKGNAME.apk 1000 1000 644 u:object_r:apk_data_file:s0
-	ADBV=$(settings get global verifier_verify_adb_installs)
-	[ $ADBV = 1 ] && settings put global verifier_verify_adb_installs 0
 	if ! op=$(pm install --user 0 -i com.android.vending -r -d $MODPATH/__PKGNAME.apk 2>&1); then
 		ui_print "ERROR: APK installation failed!"
 		abort "$op"
 	fi
-	[ $ADBV = 1 ] && settings put global verifier_verify_adb_installs $ADBV
 	BASEPATH=$(pm path __PKGNAME | grep base)
 	BASEPATH=${BASEPATH#*:}
 	if [ -z "$BASEPATH" ]; then
@@ -54,7 +51,7 @@ BASEPATHLIB=${BASEPATH%base.apk}lib/${ARCH}
 if [ -z "$(ls -A1 ${BASEPATHLIB})" ]; then
 	ui_print "- Extracting native libs"
 	mkdir -p $BASEPATHLIB
-	if ! op=$(unzip -j $MODPATH/__EXTRCT lib/${ARCH_LIB}/* -d ${BASEPATHLIB} 2>&1); then
+	if ! op=$(unzip -j $MODPATH/__PKGNAME.apk lib/${ARCH_LIB}/* -d ${BASEPATHLIB} 2>&1); then
 		ui_print "ERROR: extracting native libs failed"
 		abort "$op"
 	fi
@@ -69,19 +66,13 @@ RVPATH=$NVBASE/rvhc/__PKGNAME_rv.apk
 mv -f $MODPATH/base.apk $RVPATH
 
 if ! op=$(su -Mc mount -o bind $RVPATH $BASEPATH 2>&1); then
+	ui_print "ERROR: Mount failed!"
 	ui_print "$op"
-	ui_print "WARNING: Mount failed! Trying in non-global mountspace mode"
-	if ! op=$(mount -o bind $RVPATH $BASEPATH 2>&1); then
-		ui_print "ERROR: $op"
-		abort "Try flasing the module in official Magisk Manager app"
-	fi
+	abort "Flash in official Magisk app"
 fi
 am force-stop __PKGNAME
 ui_print "- Optimizing __PKGNAME"
 cmd package compile --reset __PKGNAME &
 
 ui_print "- Cleanup"
-rm -rf $MODPATH/bin $MODPATH/__PKGNAME.apk $NVBASE/__PKGNAME_rv.apk
-for s in "uninstall.sh" "service.sh"; do
-	sed -i "2 i\NVBASE=${NVBASE}" $MODPATH/$s
-done
+rm -rf $MODPATH/bin $MODPATH/__PKGNAME.apk
