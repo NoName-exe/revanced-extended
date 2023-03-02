@@ -1,20 +1,17 @@
 CLI: revanced-cli-2.21.0-all.jar  
-Integrations: revanced-integrations-0.99.9.apk  
-Patches: revanced-patches-2.164.9.jar  
+Integrations: revanced-integrations-0.99.11.apk  
+Patches: revanced-patches-2.164.11.jar  
 
 YouTube
 ==
-- refactor(litho): minor optimization
-- fix incorrect switch description
-
+- fix: YouTube crashes when entering revanced extended settings https://github.com/inotia00/ReVanced_Extended/issues/364
+- rollback: logging improvements
 - crowdin translation update
-`Chinese Simplified`, `French`
+`Belarusian`, `Japanese`
 
-
-YouTube Music
+ETC
 ==
-- crowdin translation update
-`Spanish`
+- add suport YouTube v18.08.36
 
 ※ Compatible ReVanced Manager: v0.0.56
 ※ If you want to contribute to the translation, refer below
@@ -24,9 +21,9 @@ YouTube Music
 - [Other Countries](https://crowdin.com/project/revancedextended)
   
 **App Versions:**  
-YouTube: 18.07.35  
-YouTube-Music (arm64-v8a): 5.45.52  
-YouTube-Music (arm-v7a): 5.45.52  
+YouTube: 18.08.37  
+YouTube-Music (arm64-v8a): 5.46.52  
+YouTube-Music (arm-v7a): 5.46.52  
 
 Install [Vanced MicroG](https://github.com/inotia00/VancedMicroG/releases) to be able to use non-root YouTube or YouTube-Music  
 
