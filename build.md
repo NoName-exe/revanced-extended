@@ -1,24 +1,18 @@
 CLI: revanced-cli-2.21.0-all.jar  
-Integrations: revanced-integrations-0.99.30.apk  
-Patches: revanced-patches-2.164.32.jar  
+Integrations: revanced-integrations-0.100.1.apk  
+Patches: revanced-patches-2.165.1.jar  
 
 YouTube
 ==
-- fix: issues with protobuf
-https://github.com/inotia00/ReVanced_Extended/issues/471 https://github.com/inotia00/ReVanced_Extended/issues/475 https://github.com/inotia00/ReVanced_Extended/issues/477 https://github.com/inotia00/ReVanced_Extended/issues/478
-- refactor(protobuf-spoof): apply another protobuf parametar instead of shorts' protobuf parametar
-- refactor(protobuf-spoof): stop spoofing protobuf in feed
+- fix: issues with protobuf https://github.com/inotia00/ReVanced_Extended/issues/480 https://github.com/inotia00/ReVanced_Extended/issues/484
+- refactor(protobuf-spoof): integrated into settings
+- refactor(protobuf-spoof): set to off by default
+- feat(general-ads): hide new type of ad
 - crowdin translation update
-`Chinese Simplified`, `French`, `Greek`, `Japanese`, `Polish`, `Vietnamese`
+`Arabic`, `French`, `Greek`, `Indonesian`, `Korean`, `Spanish`, `Ukrainian`, `Vietnamese`
 
 
-YouTube Music
-==
-- crowdin translation update
-`Greek`
-
-
-※ Compatible ReVanced Manager: v0.0.56
+※ Compatible ReVanced Manager: v0.0.57
 ※ If you want to contribute to the translation, refer below
 
 [Crowdin translation]
@@ -27,8 +21,8 @@ YouTube Music
   
 **App Versions:**  
 YouTube: 18.08.39  
-YouTube-Music (arm64-v8a): 5.47.53  
-YouTube-Music (arm-v7a): 5.47.53  
+YouTube-Music (arm64-v8a): 5.48.52  
+YouTube-Music (arm-v7a): 5.48.52  
 
 Install [Vanced MicroG](https://github.com/inotia00/VancedMicroG/releases) to be able to use non-root YouTube or YouTube-Music  
 
