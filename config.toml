@@ -1,4 +1,3 @@
-# see https://github.com/j-hc/revanced-magisk-module/blob/main/CONFIG.md for more detailed explanations
 compression-level = 9         # compression level for module zips. between 1 and 9
 logging-to-file = true        # enables logging of every patch process to a seperate file
 enable-magisk-update = true   # set this to false if you do not want to receive updates for the module in magisk app
@@ -8,7 +7,9 @@ patches-source = "inotia00/revanced-patches"
 integrations-source = "inotia00/revanced-integrations"
 rv-brand = "ReVanced eXtended"
 
-# add 'enabled = false' for not patching a specific app
+# add 'enabled = false' for not patching a specific app or remove its entry
+# see https://github.com/j-hc/revanced-magisk-module/blob/main/CONFIG.md for more detailed explanations
+
 [YouTube]
 enabled = true
 build-mode = "both"                                                   # 'both', 'apk' or 'module'
@@ -16,7 +17,6 @@ excluded-patches = ""                                                 # whitespa
 included-patches = ""                                                 # whitespace seperated list of patches to include
 version = "auto"                                                      # 'auto', 'latest' or a custom one like '17.40.41'
 exclusive-patches = false                                             # excludes all patches by default
-merge-integrations = true
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
 module-prop-name = "ytrvx-magisk"
 
@@ -26,7 +26,6 @@ app-name = "YouTube-Music"
 excluded-patches = ""
 included-patches = ""
 version = "auto"
-merge-integrations = true
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
 module-prop-name = "ytmusicrvx-magisk"
 arch = "arm64-v8a"
@@ -37,7 +36,6 @@ app-name = "YouTube-Music"
 excluded-patches = ""
 included-patches = ""
 version = "auto"
-merge-integrations = true
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
 module-prop-name = "ytmusicrvx-arm-magisk"
 arch = "arm-v7a"
