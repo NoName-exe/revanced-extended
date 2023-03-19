@@ -1,27 +1,17 @@
 CLI: revanced-cli-2.21.0-all.jar  
-Integrations: revanced-integrations-0.100.2.apk  
-Patches: revanced-patches-2.166.1.jar  
+Integrations: revanced-integrations-0.100.5.apk  
+Patches: revanced-patches-2.166.5.jar  
 
 YouTube
 ==
-- add `hide-autoplay-preview` patch
-- add `Show fullscreen title` settings
-- fix(return-youtube-dislike): fix right to left text layout
-- refactor(hide-autoplay-button): no longer hide [autoplay preview](https://www.reddit.com/r/revancedextended/comments/11q8rng/any_idea_how_to_hide_this_banner_in_full_screen/)
-- refactor(protobuf-spoof): move to `Experimental Flags`
+- refactor: no longer hide 'Paid promotion' banner in shorts player (it causes crash in certain circumstances. also fix: https://github.com/inotia00/ReVanced_Extended/issues/492)
 - crowdin translation update
-`Chinese Traditional`, `French`, `Greek`, `Italian`, `Japanese`, `Korean`, `Polish`, `Russian`, `Ukrainian`, `Vietnamese`
-
-
-YouTube Music
-==
-- crowdin translation update
-`Chinese Traditional`
+`Korean`, `Russian`
 
 
 ETC
 ==
-- add suport YouTube v18.10.36
+- Since this release is a hotfix, please refer to the changelog of the [previous release](https://github.com/inotia00/revanced-patches/releases/tag/v2.166.4)
 
 
 ※ Compatible ReVanced Manager: v0.0.57
@@ -32,7 +22,7 @@ ETC
 - [Other Countries](https://crowdin.com/project/revancedextended)
   
 **App Versions:**  
-YouTube: 18.08.39  
+YouTube: 18.10.37  
 YouTube-Music (arm64-v8a): 5.48.52  
 YouTube-Music (arm-v7a): 5.48.52  
 
