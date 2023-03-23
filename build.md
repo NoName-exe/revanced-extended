@@ -1,21 +1,21 @@
 CLI: revanced-cli-2.21.0-all.jar  
-Integrations: revanced-integrations-0.100.8.apk  
-Patches: revanced-patches-2.166.8.jar  
+Integrations: revanced-integrations-0.100.10.apk  
+Patches: revanced-patches-2.166.10.jar  
 
 YouTube
 ==
-- fix: captions are disabled in Shorts when `hide-auto-captions` patch is enabled https://github.com/inotia00/ReVanced_Extended/issues/484
-- fix: `protobuf-spoof` patch not working in YouTube notifications section https://github.com/inotia00/ReVanced_Extended/issues/509
-- fix: splash icon not applying on Android 12+ devices
-- refactor(protobuf-spoof): add more protobuf spoof targets
+- fix(enable-timestamps-speed): alignment of append string is abnormal in RTL layout https://github.com/inotia00/ReVanced_Extended/issues/506
+- fix(return-youtube-dislike): when like/dislike count is over 1000, alignment of append string is abnormal in RTL layout https://github.com/inotia00/ReVanced_Extended/issues/468
+- refactor(hide-button-container): button container settings now match with the official ReVanced's source code (also fix https://github.com/inotia00/ReVanced_Extended/issues/339)
 - crowdin translation update
-`Indonesian`, `Italian`, `Korean`, `Polish`, `Russian`, `Ukrainian`, `Vietnamese`
+`Azerbaijani`, `Bengali`, `Chinese Traditional`, `French`, `German`, `Italian`, `Japanese`, `Korean`, `Russian`, `Spanish`, `Ukrainian`
 
 
 YouTube Music
 ==
+- fix: app crashes on YT Music v5.49.54+
 - crowdin translation update
-`Korean`
+`Bengali`
 
 
 ※ Compatible ReVanced Manager: v0.0.57
@@ -27,8 +27,8 @@ YouTube Music
   
 **App Versions:**  
 YouTube: 18.10.37  
-YouTube-Music (arm64-v8a): 5.48.52  
-YouTube-Music (arm-v7a): 5.48.52  
+YouTube-Music (arm64-v8a): 5.49.54  
+YouTube-Music (arm-v7a): 5.49.54  
 
 Install [Vanced MicroG](https://github.com/inotia00/VancedMicroG/releases) to be able to use non-root YouTube or YouTube-Music  
 
