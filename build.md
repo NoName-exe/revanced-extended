@@ -1,25 +1,21 @@
 CLI: revanced-cli-2.21.0-all.jar  
-Integrations: revanced-integrations-0.100.15.apk  
-Patches: revanced-patches-2.166.15.jar  
+Integrations: revanced-integrations-0.100.18.apk  
+Patches: revanced-patches-2.166.18.jar  
 
 YouTube
 ==
-- fix: `hide-account-menu`patch hides all account menu when filter is empty https://github.com/inotia00/ReVanced_Extended/issues/554
-- fix: `hide-mixplaylists`patch blocks all search results for certain keywords https://github.com/inotia00/ReVanced_Extended/issues/562
+- add `hide-category-bar` patch https://github.com/inotia00/ReVanced_Extended/issues/136 https://github.com/inotia00/ReVanced_Extended/issues/214
+- add `force-player-button-background` patch (Excluded by default. this patch fixes this issue https://github.com/inotia00/ReVanced_Extended/issues/569)
+- fix: typo https://github.com/inotia00/ReVanced_Extended/issues/567
+- fix: `optimize-resource` patch removes license activity https://github.com/inotia00/ReVanced_Extended/issues/568
 - crowdin translation update
-`Chinese Traditional`, `French`, `Greek`, `Italian`, `Japanese`, `Korean`, `Polish`, `Russian`, `Turkish`, `Ukrainian`, `Vietnamese`
+`Azerbaijani`, `Chinese Simplified`, `Chinese Traditional`, `French`, `Korean`, `Spanish`, `Turkish`, `Ukrainian`, `Vietnamese`
 
 
 YouTube Music
 ==
 - crowdin translation update
-`Chinese Traditional`
-
-
-ETC
-==
-- add support YouTube v18.11.36
-- drop support YouTube v18.11.35
+`Chinese Traditional`, `Korean`
 
 
 ※ Compatible ReVanced Manager: v0.0.57
