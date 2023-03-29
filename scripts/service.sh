@@ -1,16 +1,15 @@
 #!/system/bin/sh
 # shellcheck disable=SC2086
 MODDIR=${0%/*}
-MODULES=${MODDIR%/*}
-RVPATH=${MODULES%/*}/rvhc/__PKGNAME_rv.apk
+RVPATH=${NVBASE}/rvhc/__PKGNAME_rv.apk
 
 until [ "$(getprop sys.boot_completed)" = 1 ]; do sleep 1; done
 while
 	BASEPATH=$(pm path __PKGNAME)
 	svcl=$?
 	[ $svcl = 20 ]
-do sleep 1; done
-sleep 5
+do sleep 2; done
+sleep 4
 
 err() {
 	[ ! -f $MODDIR/err ] && cp $MODDIR/module.prop $MODDIR/err

@@ -14,11 +14,11 @@ else
 fi
 set_perm_recursive $MODPATH/bin 0 0 0755 0777
 
-nsenter -t1 -m grep __PKGNAME /proc/mounts | while read -r line; do
+nsenter -t1 -m -- grep __PKGNAME /proc/mounts | while read -r line; do
 	ui_print "- Un-mount"
 	mp=${line#* }
 	mp=${mp%% *}
-	nsenter -t1 -m umount -l ${mp%%\\*}
+	nsenter -t1 -m -- umount -l "${mp%%\\*}"
 done
 am force-stop __PKGNAME
 
@@ -41,7 +41,7 @@ if [ $INS = true ]; then
 	settings put global verifier_verify_adb_installs 0
 	SZ=$(stat -c "%s" $MODPATH/__PKGNAME.apk)
 	if ! SES=$(pm install-create --user 0 -i com.android.vending -r -d -S "$SZ" 2>&1); then
-		ui_print "ERROR: session creation failed"
+		ui_print "ERROR: install-create failed"
 		abort "$SES"
 	fi
 	SES=${SES#*[}
@@ -71,17 +71,17 @@ if [ -z "$(ls -A1 ${BASEPATHLIB})" ]; then
 		ui_print "ERROR: extracting native libs failed"
 		abort "$op"
 	fi
-	set_perm_recursive ${BASEPATHLIB} 1000 1000 755 755 u:object_r:apk_data_file:s0
+	set_perm_recursive ${BASEPATH}/lib 1000 1000 755 755 u:object_r:apk_data_file:s0
 fi
 ui_print "- Setting Permissions"
 set_perm $MODPATH/base.apk 1000 1000 644 u:object_r:apk_data_file:s0
 
 ui_print "- Mounting __PKGNAME"
-mkdir $NVBASE/rvhc 2>/dev/null
+mkdir -p $NVBASE/rvhc
 RVPATH=$NVBASE/rvhc/__PKGNAME_rv.apk
 mv -f $MODPATH/base.apk $RVPATH
 
-if ! op=$(nsenter -t1 -m mount -o bind $RVPATH $BASEPATH/base.apk 2>&1); then
+if ! op=$(nsenter -t1 -m -- mount -o bind $RVPATH $BASEPATH/base.apk 2>&1); then
 	ui_print "ERROR: Mount failed!"
 	ui_print "$op"
 fi
@@ -91,3 +91,7 @@ nohup cmd package compile --reset __PKGNAME >/dev/null 2>&1 &
 
 ui_print "- Cleanup"
 rm -rf $MODPATH/bin $MODPATH/__PKGNAME.apk
+
+for s in "uninstall.sh" "service.sh"; do
+	sed -i "2 i\NVBASE=${NVBASE}" $MODPATH/$s
+done
