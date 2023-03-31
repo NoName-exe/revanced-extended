@@ -5,7 +5,7 @@ You can see the patches applied for [Revanced](https://github.com/kevinr99089/re
 
 - Available Apps: YouTube (RV), Twitch (RV), TikTok (RV).
 
-#### Please note that the signature is different from ReVanced Manager. Applications patched here cannot be updated on an app patched by ReVanced Manager (without uninstalling the application first, remember to export your settings before uninstalling it) (but you can update applications present on kevinr99089/revanced.builder, the signatures do not change).
+#### Please note that the signatures are different from ReVanced Manager. You will not be able to install these applications without uninstalling the application patched by RV Manager first, remember to export your settings before uninstalling it) (you can however update the applications present here, the signatures do not change).
 
 This Fork is dedicated to ReVanced builds, if you are looking for Extended builds, please visit my other [fork](https://github.com/kevinr99089/revanced.extended)
 
