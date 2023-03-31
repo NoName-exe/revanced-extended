@@ -372,13 +372,13 @@ build_rv() {
 	local is_bundle=false
 	if [ "$mode_arg" = module ] || [ "$mode_arg" = both ]; then
 		if [ -f "$stock_bundle_apk" ]; then
-			is_bundle=false
+			is_bundle=true
 		elif [ "$dl_from" = apkmirror ]; then
 			pr "Downloading '${app_name}' bundle from APKMirror"
 			if dl_apkmirror "${args[apkmirror_dlurl]}" "$version" "$stock_bundle_apk" BUNDLE "" ""; then
 				if (($(stat -c%s "$stock_apk") - $(stat -c%s "$stock_bundle_apk") > 10000000)); then
 					pr "'${app_name}' bundle was downloaded successfully and will be used for the module"
-					is_bundle=false
+					is_bundle=true
 				else
 					pr "'${app_name}' bundle was downloaded but will not be used"
 				fi
@@ -455,7 +455,7 @@ build_rv() {
 			"${args[module_prop_name]}" \
 			"${app_name} ${RV_BRAND}" \
 			"$version" \
-			"${app_name} ${RV_BRAND} Magisk Module" \
+			"${app_name} ${RV_BRAND} Magisk module" \
 			"https://raw.githubusercontent.com/${GITHUB_REPOSITORY:-}/update/${upj}" \
 			"$base_template"
 
@@ -500,7 +500,7 @@ module_prop() {
 name=${2}
 version=v${3}
 versionCode=${NEXT_VER_CODE}
-author=NoName-exe
+author=j-hc
 description=${4}" >"${6}/module.prop"
 
 	if [ "$ENABLE_MAGISK_UPDATE" = true ]; then echo "updateJson=${5}" >>"${6}/module.prop"; fi
