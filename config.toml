@@ -19,6 +19,10 @@ build-mode = "apk"
 version = "auto"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/twitch-interactive-inc/twitch/"
 
-[TikTok]
+[TikTok Stable]
 version = "auto"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly/"
+
+[TikTok Latest]                                                        # Some patches like Downloads, Feed Filter, Settings and Sim-spoof cannot be applied.
+version = "latest"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly/"
