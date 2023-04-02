@@ -5,6 +5,7 @@ build-mindetach-module = false
 
 # add 'enabled = false' for not patching a specific app or remove its entry
 # see https://github.com/j-hc/revanced-magisk-module/blob/main/CONFIG.md for more detailed explanations
+# applications that do not receive patches for a certain period of time will be disabled until update.
 
 [YouTube]
 enabled = true
