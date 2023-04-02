@@ -1,5 +1,5 @@
-compression-level = 9         # compression level for module zips. between 1 and 9
-logging-to-file = true        # enables logging of every patch process to a seperate file
+compression-level = 9          # compression level for module zips. between 1 and 9
+logging-to-file = true         # enables logging of every patch process to a seperate file
 enable-magisk-update = false   # set this to false if you do not want to receive updates for the module in magisk app
 build-mindetach-module = false
 
@@ -19,10 +19,12 @@ build-mode = "apk"
 version = "auto"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/twitch-interactive-inc/twitch/"
 
-[TikTok Stable]
+# If TikTok is banned, the patches will be disabled, temporarily or permanently (depending on the authorities)
+
+[TikTok Stable] # All recommended patchs are applied.
 version = "auto"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly/"
 
-[TikTok Latest]                                                        # Some patches like Downloads, Feed Filter, Settings and Sim-spoof cannot be applied.
+[TikTok Latest] # Some patches like "Downloads", "Feed Filter", "Settings" and "Sim-spoof" cannot be applied.
 version = "latest"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly/"
