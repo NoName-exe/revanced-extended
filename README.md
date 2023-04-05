@@ -1,9 +1,10 @@
 #### ⚠️ Do not download modules from 3rd party sources like random websites you found on Google. Only use this repository. I am not responsible for anything they may contain.
 #### ⚠️ Only non-root releases (Magisk's are disabled)
 
-You can see the patches applied for [Revanced](https://github.com/kevinr99089/revanced.builder/blob/main/config.toml)
+See applied patches for [Revanced](https://github.com/kevinr99089/revanced.builder/blob/main/config.toml)
 
-- Available Apps: YouTube (RV), Twitch (RV), TikTok (RV).
+#### Available apps:
+- YouTube (RV), Twitch (RV), TikTok (RV).
 
 #### Please note that the signatures are different from ReVanced Manager. You will not be able to install these applications without uninstalling the application patched by RV Manager first, remember to export your settings before uninstalling it) (you can however update the applications present here, the signatures do not change).
 
