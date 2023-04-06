@@ -15,7 +15,7 @@ This Fork is dedicated to ReVanced builds, if you are looking for Extended build
 # ReVanced Magisk Module
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/rvc_magisk)
 [![Latest release](https://badgen.net/github/release/kevinr99089/revanced.builder)](https://github.com/kevinr99089/revanced.builder/releases)
-[![GitHub release](https://img.shields.io/github/release/kevinr99089/revanced.builder.svg)](https://GitHub.com/kevinr99089/revanced.builder/releases/)
+[![GitHub release](https://img.shields.io/github/release/kevinr99089/revanced.builder.svg)](https://GitHub.com/kevinr99089/revanced.builder/releases/latest)
 
 Extensive ReVanced builder  
 
