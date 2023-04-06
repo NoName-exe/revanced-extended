@@ -2,11 +2,8 @@ name: Delete old Workflow
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 24 * * *"
-
-on:
-
-  workflow_dispatch:
+    - cron: "0 12 * * wed"
+    
 jobs:
   build:
     runs-on: ubuntu-latest
