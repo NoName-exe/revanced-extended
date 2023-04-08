@@ -1,21 +1,28 @@
 CLI: revanced-cli-2.21.0-all.jar  
-Integrations: revanced-integrations-0.101.18.apk  
-Patches: revanced-patches-2.168.18.jar  
+Integrations: revanced-integrations-0.101.21.apk  
+Patches: revanced-patches-2.168.21.jar  
 
 YouTube
 ==
-- add `Hide official header` settings https://github.com/inotia00/ReVanced_Extended/issues/445
-- fix: history menu in library sometimes disappears in tablet layout
-- fix: `Hide channel avatar section` setting is not disabled in tablet layout
-- refactor(settings): replaced `adremover` label to `hide` in layout setting
+- add `change-homepage` patch
+- fix(return-youtube-dislike): dislikes disappear when you scroll down https://github.com/inotia00/ReVanced_Extended/issues/644
+- refactor(settings): moved `General/Shorts component` setting to `Shorts` setting
+- refactor(settings): removed `shorts player` label in shorts setting
+- refactor(custom-seekbar-color): custom seekbar color now applied in light mode as well as dark mode https://github.com/inotia00/ReVanced_Extended/issues/465
+- refactor(hide-previous-next-button): rewrite code
+- refactor(hide-previous-next-button): integrate `Hide previous button` and `Hide next button`
+- refactor(hide-shorts-component): rewrite code
+- refactor(hide-shorts-component): add `Hide shorts player info panels` settings
+- refactor(hide-shorts-component): add `Hide shorts player paid promotion` settings
+- refactor(shared-resource-id): move resource type to enum
+- update ad filter
 - crowdin translation update
-`Arabic`, `Bulgarian`, `French`, `German`, `Italian`, `Japanese`, `Korean`, `Russian`, `Spanish`, `Ukrainian`, `Vietnamese`
+`Arabic`, `Brazilian`, `Chinese Simplified`, `French`, `Greek`, `Indonesian`, `Italian`, `Japanese`, `Korean`, `Polish`, `Russian`, `Spanish`, `Turkish`, `Ukrainian`, `Vietnamese`
 
 
 YouTube Music
 ==
-- add `enable-compact-dialog` patch
-- add `hide-new-playlist` patch https://github.com/inotia00/ReVanced_Extended/issues/185
+- crowdin translation update`Chinese Simplified`, `Greek`, `Indonesian`, `Korean`, `Polish`, `Spanish`
 
 
 ※ Compatible ReVanced Manager: v0.0.57
@@ -26,8 +33,8 @@ YouTube Music
 - [Other Countries](https://crowdin.com/project/revancedextended)
   
 **App Versions:**  
-YouTube-Music (arm64-v8a): 5.51.50  
 YouTube: 18.12.35  
+YouTube-Music (arm64-v8a): 5.51.50  
 YouTube-Music (arm-v7a): 5.51.50  
 
 Install [Vanced MicroG](https://github.com/inotia00/VancedMicroG/releases) to be able to use non-root YouTube or YouTube-Music  
