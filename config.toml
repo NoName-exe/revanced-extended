@@ -15,6 +15,11 @@ included-patches = ""                                                 # space-se
 version = "auto"                                                      # 'auto', 'latest', 'beta' or a custom one like '17.40.41'
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
 
+[YT Music]
+build-mode = "apk"
+version = "auto"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
+
 [Twitch]
 build-mode = "apk"
 version = "auto"
