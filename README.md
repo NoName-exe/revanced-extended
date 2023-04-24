@@ -1,4 +1,4 @@
-#### What is ReVanced?
+# What is ReVanced?
 
 Originally, YouTube Vanced was an application that allowed you to have the features of YouTube Premium for free, in including an ad blocker, Picture in Picture, and adding features such as Sponsorblock and, for the last update, Return YouTube Dislikes (RYD)
 But March 13, 2022 was an unfortunate date, Team Vanced announced the end of YouTube Vanced support due to a letter from Google.
