@@ -11,6 +11,8 @@ Attention, English not being my native language, I use DeepL, it is possible tha
 
 Work in progress, file restructuring in progress. Adding the story of ReVanced.
 
+To install YouTube ReVanced, [click here](https://github.com/kevinr99089/revanced.extended/blob/install/README.md).
+
 This Fork is dedicated to ReVanced builds, if you are looking for Extended builds, please visit my other [fork](https://github.com/kevinr99089/revanced.extended)
 
 [![Latest release](https://badgen.net/github/release/kevinr99089/revanced.builder)](https://github.com/kevinr99089/revanced.builder/releases)
