@@ -25,6 +25,6 @@ I think the popularity of ReVanced is affected by the fact that the application 
 That's also why I created this fork, to allow more people to discover ReVanced without having to patch the application, so that it is ready to use.
 ReVanced updates are not regular, but are stable.
 
-I thank [Team Vanced](https://github.com/TeamVanced) for creating YouTube Vanced and [Team ReVanced](https://github.com/revanced) for resurrecting Vanced, and to [Inotia00](https://github.com/inotia00) to propose an improved version of ReVanced.
+I thank [Team Vanced](https://github.com/TeamVanced) for creating YouTube Vanced and [Team ReVanced](https://github.com/revanced) for resurrecting Vanced, and to [Inotia00](https://github.com/inotia00) to [propose an improved version of ReVanced](https://github.com/kevinr99089/revanced.extended/blob/History/README.md).
 
 You deserve more popularity.
