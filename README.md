@@ -14,6 +14,7 @@ This Fork is dedicated to ReVanced builds, if you are looking for Extended build
 
 [![Latest release](https://badgen.net/github/release/kevinr99089/revanced.builder)](https://github.com/kevinr99089/revanced.builder/releases)
 [![GitHub release](https://img.shields.io/github/release/kevinr99089/revanced.builder.svg)](https://GitHub.com/kevinr99089/revanced.builder/releases/latest)
+[![GitHub dnlds](https://img.shields.io/github/downloads/kevinr99089/revanced.builder/total)](https://GitHub.com/kevinr99089/revanced.builder/releases/latest)
 
 # Thanks to
 [j-hc](https://github.com/j-hc) for [mindetach](https://github.com/j-hc/mindetach-magisk/tree/b821dc8ec683802e572d79e18820f66a46a3ded0) and this [script on which it is based](https://github.com/j-hc/revanced-magisk-module).
