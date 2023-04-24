@@ -1,10 +1,8 @@
-compression-level = 9          # compression level for module zips. between 1 and 9
-logging-to-file = true         # enables logging of every patch process to a seperate file
-enable-magisk-update = false   # set this to false if you do not want to receive updates for the module in magisk app
+compression-level = 9
+logging-to-file = true
+enable-magisk-update = false
 build-mindetach-module = false
 
-# add 'enabled = false' for not patching a specific app or remove its entry
-# see https://github.com/j-hc/revanced-magisk-module/blob/main/CONFIG.md for more detailed explanations
 # applications that do not receive patches for a certain period of time will be disabled until update.
 
 [YouTube]
@@ -16,11 +14,13 @@ version = "auto"                                                      # 'auto', 
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
 
 [YT Music]
+enabled = true
 build-mode = "apk"
 version = "auto"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
 
-[Twitch]
+[Twitch] #Twitch has been disabled because it hasn't had any new patches for a while.
+enabled = false
 build-mode = "apk"
 version = "auto"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/twitch-interactive-inc/twitch/"
@@ -28,9 +28,11 @@ apkmirror-dlurl = "https://www.apkmirror.com/apk/twitch-interactive-inc/twitch/"
 # If TikTok is banned, the patches will be disabled, temporarily or permanently (depending on the authorities)
 
 [TikTok Stable] # All recommended patchs are applied.
+enabled = true
 version = "auto"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly/"
 
 [TikTok Latest] # Some patches like "Downloads", "Feed Filter", "Settings" and "Sim-spoof" cannot be applied.
+enabled = true
 version = "latest"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly/"
