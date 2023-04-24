@@ -4,7 +4,7 @@
 See applied patches for [Revanced](https://github.com/kevinr99089/revanced.builder/blob/main/config.toml)
 
 #### Available apps:
-- YouTube (RV), Twitch (RV), TikTok (RV).
+- YouTube (RV), YT Music (RV), Twitch (RV), TikTok Stable (RV), TikTok Latest (RV).
 
 #### Please note that the signatures are different from ReVanced Manager. You will not be able to install these applications without uninstalling the application patched by RV Manager first, remember to export your settings before uninstalling it) (you can however update the applications present here, the signatures do not change).
 
