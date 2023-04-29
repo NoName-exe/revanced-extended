@@ -1,27 +1,30 @@
 CLI: revanced-cli-2.21.0-all.jar  
-Integrations: revanced-integrations-0.102.6.apk  
-Patches: revanced-patches-2.169.5.jar  
+Integrations: revanced-integrations-0.105.2.apk  
+Patches: revanced-patches-2.171.2.jar  
 
 YouTube
 ==
-- add `hide-quick-actions` patch
-- add `hide-home-button`, `hide-subscriptions-button` patch https://github.com/inotia00/ReVanced_Extended/issues/14
-- fix typo
-- fix: `hide-live-chat` patch still remains in patch list
-- fix(hide-button-container): add missing dependencies
-- fix(sponsorblock): include milliseconds in the voting menu
-- refactor(hide-button-container): add support for a/b tests
-- refactor(swipe-controls): when `Press-to-swipe` is disabled, `Press-to-swipe haptic feedback` is also disabled https://github.com/inotia00/ReVanced_Extended/issues/811
-- remove `hide-fullscreen-buttoncontainer` patch
-- update adblock filter
+- feat(protobuf-spoof): change default value to ON
+- fix(hide-email-address): add space between address and bracket https://github.com/inotia00/ReVanced_Extended/issues/886
+- fix(protobuf-spoof): subtitles are on top https://github.com/inotia00/ReVanced_Extended/issues/875
+- fix(sponsorblock): video-id-hook should be applied last
+- refactor(force-vp9-codec): integrate `lift-vertical-video-restriction` patch https://github.com/inotia00/ReVanced_Extended/issues/883
 - crowdin translation update
-`Bulgarian`, `Chinese Traditional`, `French`, `Italian`, `Japanese`, `Korean`, `Polish`, `Spanish`, `Ukrainian`, `Vietnamese`
+`Chinese Traditional`, `French`, `German`, `Greek`, `Italian`, `Japanese`, `Polish`, `Russian`, `Spanish`, `Turkish`, `Ukrainian`, `Vietnamese`
+
+
+YouTube Music
+==
+- feat(music-settings): update strings resources
+- fix: `music-microg-support` patch causes YT settings to crash https://github.com/inotia00/ReVanced_Extended/issues/874
+- fix(remember-video-quality): patch description is missing
+- crowdin translation update
+`Chinese Traditional`, `French`, `Greek`, `Polish`, `Spanish`, `Turkish`, `Vietnamese`
 
 
 ETC
 ==
-- add support YouTube v18.15.40
-- drop support YouTube v18.15.38
+- build: update dependencies
 
 
 ※ Compatible ReVanced Manager: v0.0.57
@@ -32,9 +35,9 @@ ETC
 - [Other Countries](https://crowdin.com/project/revancedextended)
   
 **App Versions:**  
-YouTube: 18.15.40  
-YouTube-Music (arm64-v8a): 5.53.50  
-YouTube-Music (arm-v7a): 5.53.50  
+YouTube: 18.16.37  
+YouTube-Music (arm64-v8a): 5.54.52  
+YouTube-Music (arm-v7a): 5.54.52  
 
 Install [Vanced MicroG](https://github.com/inotia00/VancedMicroG/releases) to be able to use non-root YouTube or YouTube-Music  
 
