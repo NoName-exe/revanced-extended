@@ -1,4 +1,3 @@
-compression-level = 9
 logging-to-file = true
 enable-magisk-update = false
 build-mindetach-module = false
