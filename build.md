@@ -1,30 +1,36 @@
 CLI: revanced-cli-2.21.0-all.jar  
-Integrations: revanced-integrations-0.105.2.apk  
-Patches: revanced-patches-2.171.2.jar  
+Integrations: revanced-integrations-0.105.4.apk  
+Patches: revanced-patches-2.171.4.jar  
 
 YouTube
 ==
-- feat(protobuf-spoof): change default value to ON
-- fix(hide-email-address): add space between address and bracket https://github.com/inotia00/ReVanced_Extended/issues/886
-- fix(protobuf-spoof): subtitles are on top https://github.com/inotia00/ReVanced_Extended/issues/875
-- fix(sponsorblock): video-id-hook should be applied last
-- refactor(force-vp9-codec): integrate `lift-vertical-video-restriction` patch https://github.com/inotia00/ReVanced_Extended/issues/883
+- add `hide-get-premium` patch https://github.com/revanced/revanced-patches/issues/1984
+- add `custom-branding-icon-manual` patch [more information](https://github.com/inotia00/revanced-documentation/wiki/Options-Information-about-the-patch#if-you-want-a-custom-icon-only-available-on-cli)
+- add `custom-double-tap-length` patch
+- feat(client-spoof): removed from patch list and dependent on `microg-support` patch
+- feat(hide-general-ads): add `Hide audio track button` settings https://github.com/revanced/revanced-patches/issues/1984
+- feat(hide-cast-button): no longer dependent on `microg-support` patch https://github.com/inotia00/ReVanced_Extended/issues/866
+- feat(protobuf-spoof): update strings resources
+- feat(spoof-app-version): rename patch (`enable-old-layout` → `spoof-app-version`)
+- feat(spoof-app-version): user selectable version to spoof
+- fix(overlay-buttons): repeat button in playlist cannot changed https://github.com/inotia00/ReVanced_Extended/issues/836
+- fix(custom-video-speed): crash due to invalid key https://github.com/inotia00/ReVanced_Extended/issues/911
+- refactor(patch-options): remove `OverlayButtonsIcon`, `clientSpoofVersion` options
+(You should remove `options.toml` file, or simply reinstall the builder)
 - crowdin translation update
-`Chinese Traditional`, `French`, `German`, `Greek`, `Italian`, `Japanese`, `Polish`, `Russian`, `Spanish`, `Turkish`, `Ukrainian`, `Vietnamese`
+`Arabic`, `Bulgarian`, `Chinese Traditional`, `Finnish`, `French`, `Greek`, `Hungarian`, `Indonesian`, `Italian`, `Japanese`, `Korean`, `Polish`, `Russian`, `Spanish`, `Turkish`, `Ukrainian`, `Vietnamese`
 
 
 YouTube Music
 ==
-- feat(music-settings): update strings resources
-- fix: `music-microg-support` patch causes YT settings to crash https://github.com/inotia00/ReVanced_Extended/issues/874
-- fix(remember-video-quality): patch description is missing
+- add `custom-branding-music-manual` patch [more information](https://github.com/inotia00/revanced-documentation/wiki/Options-Information-about-the-patch#if-you-want-a-custom-icon-only-available-on-cli)
 - crowdin translation update
-`Chinese Traditional`, `French`, `Greek`, `Polish`, `Spanish`, `Turkish`, `Vietnamese`
+`Chinese Traditional`, `Greek`, `Korean`, `Polish`, `Spanish`, `Turkish`, `Vietnamese`
 
 
 ETC
 ==
-- build: update dependencies
+- add support YouTube v18.16.39
 
 
 ※ Compatible ReVanced Manager: v0.0.57
@@ -35,7 +41,6 @@ ETC
 - [Other Countries](https://crowdin.com/project/revancedextended)
   
 **App Versions:**  
-YouTube: 18.16.37  
 YouTube-Music (arm64-v8a): 5.54.52  
 YouTube-Music (arm-v7a): 5.54.52  
 
