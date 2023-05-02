@@ -3,7 +3,7 @@
 See applied patches for [Revanced](https://github.com/kevinr99089/revanced.builder/blob/main/config.toml)
 
 # Available apps:
-- YouTube (RV), YT Music (RV), Twitch (RV) [X], TikTok Stable (RV), TikTok Latest (RV) [X].
+- YouTube (RV), YT Music (RV), Twitch (RV) [X], TikTok Stable (RV), TikTok Latest (RV) [X], Vanced MicroG.
 #
 
 Attention, English not being my native language, I use DeepL, it is possible that what I write does not make sense in English or that it does not mean anything, I apologize. moreover, I don't code, there is certainly a way to do much simpler, but I can't check it.
