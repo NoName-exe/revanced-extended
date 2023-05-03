@@ -1,11 +1,10 @@
-# <p align="center">How to install ReVanced/Extended?
+# <p align="center">How to install ReVanced?
 #### <p align="center">Please note that the signatures are different from ReVanced Manager. You will not be able to install these applications without uninstalling the application patched by RV Manager first (remember to export your settings before uninstalling it) (you can however update the applications present here, the signatures do not change).
-#### <p align="center">This installation guide is for Extended, but works the same way for ReVanced.
 #
 <p align="center">Go to release:
     <img src="./Installation/01.png">
 
-<p align="center">Click on the release you want to download (for example YouTube Extended) and on Vanced Microg* Revanced release
+<p align="center">Click on the release you want to download (for example YouTube ReVanced) and on Vanced Microg* Revanced release
 <p align="center">*for non-rooted devices, Vanced MicroG is required to use your Google account.
     <img src="./Installation/02.png">
 
@@ -27,7 +26,7 @@
 
 ---
 
-<p align="center">click (in the notification bar) on MicroG first
+<p align="center">click (in the notification bar) on microg-revanced-v0.x.xx.xxxxxx-all.apk first
     <img src="./Installation/08.png">
 
 <p align="center">if you have never installed applications from the Web, you will have to Enable in the settings "Unknown Sources"
@@ -40,6 +39,6 @@
 click on "install".
     <img src="./Installation/11.png">
 
-<p align="center">Once MicroG is installed, click on YouTube Extended (in the notification bar) and click on "Install"
+<p align="center">Once MicroG is installed, click on YouTube ReVanced (in the notification bar) and click on "Install"
 
-<p align="center">and you're done. In YouTube settings, go to the "ReVanced Extended" tab, then to "Miscellaneous", Click on "Open MicroG" to be able to connect to your Google Account.
+<p align="center">and you're done. In YouTube ReVanced, click on the top right corner and click on "+" to sign in to your Google account.
