@@ -7,7 +7,7 @@ build-mindetach-module = false
 [Vanced-MicroG]
 build-mode = "apk"
 version = "latest"
-apkmirror-dlurl = "https://github.com/inotia00/mMicroG/releases/latest/download/microg.apk"
+apkmirror-dlurl = "https://github.com/inotia00/mMicroG/releases/latest/download/microg_arm64-v8a.apk"
 
 [YouTube]
 enabled = true
