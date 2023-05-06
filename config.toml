@@ -5,9 +5,11 @@ build-mindetach-module = false
 # applications that do not receive patches for a certain period of time will be disabled until update.
 
 [Vanced-MicroG]
-app-name = "mMicroG v0.2.27.231612"
 build-mode = "apk"
-apkmirror-dlurl = "https://github.com/inotia00/mMicroG/releases/latest/download/microg_arm64-v8a.apk"
+excluded-patches = ""
+included-patches = ""
+version = "auto"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/team-vanced/microg-youtube-vanced/"
 
 [YouTube]
 enabled = true
