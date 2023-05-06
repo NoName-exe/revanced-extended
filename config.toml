@@ -8,7 +8,7 @@ build-mindetach-module = false
 build-mode = "apk"
 excluded-patches = ""
 included-patches = ""
-version = "auto"
+version = "latest"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/team-vanced/microg-youtube-vanced/"
 
 [YouTube]
