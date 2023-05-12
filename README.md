@@ -1,4 +1,5 @@
 #### ⚠️ Only non-root releases (Magisk's are disabled)
+#### I am [NOT Team ReVanced or Inotia00](https://github.com/j-hc/revanced-magisk-module/blob/main/README.md), support their work [here](https://github.com/revanced).
 
 See applied patches for [Revanced](https://github.com/kevinr99089/revanced.builder/blob/main/config.toml)
 
