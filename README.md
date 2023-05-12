@@ -1,10 +1,12 @@
 #### ⚠️ Only non-root releases (Magisk's are disabled)
-#### I am [NOT Team ReVanced](https://github.com/j-hc/revanced-magisk-module#%EF%B8%8F-do-not-download-modules-from-3rd-party-sources-like-random-websites-you-found-on-google-there-are-many-that-uses-my-modules-and-impersonates-revanced), support their work [here](https://github.com/revanced).
+#### ⚠️I am [NOT Team ReVanced](https://github.com/j-hc/revanced-magisk-module#%EF%B8%8F-do-not-download-modules-from-3rd-party-sources-like-random-websites-you-found-on-google-there-are-many-that-uses-my-modules-and-impersonates-revanced), support their work [here](https://github.com/revanced).
 
 See applied patches for [Revanced](https://github.com/kevinr99089/ReVanced.Builder/blob/main/config.toml)
 
-# <p align="center">Available apps:
+## <p align="center">Available apps:
+<p align="center">
 - YouTube (RV), YT Music (RV), Twitch (RV) [X], TikTok Stable (RV) and TikTok Latest (RV) [X].
+
 #
 
 Attention, English not being my native language, I use DeepL, it is possible that what I write does not make sense in English or that it does not mean anything, I apologize. moreover, I don't code, there is certainly a way to do much simpler, but I can't check it.
