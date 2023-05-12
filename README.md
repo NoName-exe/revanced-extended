@@ -1,7 +1,7 @@
 #### ⚠️ Only non-root releases (Magisk's are disabled)
 #### I am [NOT Team ReVanced or Inotia00](https://github.com/j-hc/revanced-magisk-module#%EF%B8%8F-do-not-download-modules-from-3rd-party-sources-like-random-websites-you-found-on-google-there-are-many-that-uses-my-modules-and-impersonates-revanced), support their work [here](https://github.com/revanced).
 
-See applied patches for [Revanced](https://github.com/kevinr99089/revanced.builder/blob/main/config.toml)
+See applied patches for [Revanced](https://github.com/kevinr99089/ReVanced.Builder/blob/main/config.toml)
 
 # <p align="center">Available apps:
 - YouTube (RV), YT Music (RV), Twitch (RV) [X], TikTok Stable (RV) and TikTok Latest (RV) [X].
@@ -9,15 +9,15 @@ See applied patches for [Revanced](https://github.com/kevinr99089/revanced.build
 
 Attention, English not being my native language, I use DeepL, it is possible that what I write does not make sense in English or that it does not mean anything, I apologize. moreover, I don't code, there is certainly a way to do much simpler, but I can't check it.
 
-To read the ReVanced story, [click here](https://github.com/kevinr99089/revanced.builder/blob/History/README.md)
+To read the ReVanced story, [click here](https://github.com/kevinr99089/ReVanced.Builder/blob/History/README.md)
 
-To install YouTube ReVanced, [click here](https://github.com/kevinr99089/revanced.builder/blob/install/README.md).
+To install YouTube ReVanced, [click here](https://github.com/kevinr99089/ReVanced.Builder/blob/install/README.md).
 
-This Fork is dedicated to ReVanced builds, if you are looking for Extended builds, please visit my other [fork](https://github.com/kevinr99089/revanced.extended)
+This Fork is dedicated to ReVanced builds, if you are looking for Extended builds, please visit my other [fork](https://github.com/kevinr99089/Extended.Builder)
 
-[![Latest release](https://badgen.net/github/release/kevinr99089/revanced.builder)](https://github.com/kevinr99089/revanced.builder/releases)
-[![GitHub release](https://img.shields.io/github/release/kevinr99089/revanced.builder.svg)](https://GitHub.com/kevinr99089/revanced.builder/releases/latest)
-[![GitHub dnlds](https://img.shields.io/github/downloads/kevinr99089/revanced.builder/total)](https://GitHub.com/kevinr99089/revanced.builder/releases/latest)
+[![Latest release](https://badgen.net/github/release/kevinr99089/ReVanced.Builder)](https://github.com/kevinr99089/ReVanced.Builder/releases)
+[![GitHub release](https://img.shields.io/github/release/kevinr99089/ReVanced.Builder.svg)](https://GitHub.com/kevinr99089/ReVanced.Builder/releases/latest)
+[![GitHub dnlds](https://img.shields.io/github/downloads/kevinr99089/ReVanced.Builder/total)](https://GitHub.com/kevinr99089/ReVanced.Builder/releases/latest)
 
 # <p align="center">Thanks to
 [j-hc](https://github.com/j-hc) for [mindetach](https://github.com/j-hc/mindetach-magisk/tree/b821dc8ec683802e572d79e18820f66a46a3ded0) and this [script on which it is based](https://github.com/j-hc/revanced-magisk-module).
