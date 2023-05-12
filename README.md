@@ -3,7 +3,7 @@
 
 See applied patches for [Revanced](https://github.com/kevinr99089/revanced.builder/blob/main/config.toml)
 
-# Available apps:
+# <p align="center">Available apps:
 - YouTube (RV), YT Music (RV), Twitch (RV) [X], TikTok Stable (RV) and TikTok Latest (RV) [X].
 #
 
@@ -19,7 +19,7 @@ This Fork is dedicated to ReVanced builds, if you are looking for Extended build
 [![GitHub release](https://img.shields.io/github/release/kevinr99089/revanced.builder.svg)](https://GitHub.com/kevinr99089/revanced.builder/releases/latest)
 [![GitHub dnlds](https://img.shields.io/github/downloads/kevinr99089/revanced.builder/total)](https://GitHub.com/kevinr99089/revanced.builder/releases/latest)
 
-# Thanks to
+# <p align="center">Thanks to
 [j-hc](https://github.com/j-hc) for [mindetach](https://github.com/j-hc/mindetach-magisk/tree/b821dc8ec683802e572d79e18820f66a46a3ded0) and this [script on which it is based](https://github.com/j-hc/revanced-magisk-module).
 
 [NoName](https://github.com/NoName-exe) for allowing me to reuse the j-hc script on this fork.
