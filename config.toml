@@ -20,7 +20,7 @@ apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
 arch = "arm64-v8a"
 
 [Twitch] #Twitch has been disabled because it hasn't had any new patches for a while.
-enabled = false
+enabled = true
 build-mode = "apk"
 version = "auto"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/twitch-interactive-inc/twitch/"
