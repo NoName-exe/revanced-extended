@@ -1,4 +1,4 @@
-#### ⚠️ Do not download modules from 3rd party sources like random websites you found on Google. Only use this repository. I am not responsible for anything they may contain.
+#### ⚠️ Do not download modules from 3rd party sources like random websites you found on Google. There are many that uses my modules and impersonates ReVanced.
 
 # ReVanced eXtended
 [![Build Modules](https://github.com/NoName-exe/revanced-extended/actions/workflows/build.yml/badge.svg)](https://github.com/NoName-exe/revanced-extended/actions/workflows/build.yml)
@@ -15,6 +15,7 @@ Get the [latest CI release](https://github.com/NoName-exe/revanced-extended/rele
      * Receive updates from Magisk app.
      * Should not break safetynet or trigger root detections used by certain apps.
      * Handle installation of the correct version of the stock app and all that.
+     * Support Magisk and KernelSU.
 
  ## Notes
 * YouTube Magisk Module is installed as a system app and requires a reboot to install/update.

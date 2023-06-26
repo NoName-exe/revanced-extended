@@ -40,9 +40,6 @@ jobs:
           GITHUB_REPOSITORY: $GITHUB_REPOSITORY
           NEXT_VER_CODE: ${{ steps.next_ver_code.outputs.NEXT_VER_CODE }}
 
-      - name : Repack YouTube to HuskyDG's magisk module template
-        run : curl -sSLO https://raw.githubusercontent.com/NoName-exe/revanced-misc-stuff/master/scripts/repack.sh && chmod +x repack.sh && ./repack.sh        
-
       - name: Get output
         id: get_output
         run: |
@@ -84,13 +81,11 @@ jobs:
           }"
           }
 
-          cd build || echo "build folder not found"
-          for OUTPUT in *revanced*.zip; do
-            [ "$OUTPUT" = "*revanced*.zip" ] && continue
+          cd build || { echo "build folder not found"; exit 1; }
+          for OUTPUT in *magisk*.zip; do
+            [ "$OUTPUT" = "*magisk*.zip" ] && continue
             ZIP_S=$(unzip -p "$OUTPUT" module.prop)
-            if ! UPDATE_JSON=$(echo "$ZIP_S" | grep updateJson); then
-              continue
-            fi
+            if ! UPDATE_JSON=$(echo "$ZIP_S" | grep updateJson); then continue; fi
             UPDATE_JSON="${UPDATE_JSON##*/}"
             VER=$(echo "$ZIP_S" | grep version=)
             VER="${VER##*=}"
@@ -113,13 +108,13 @@ jobs:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
         if: env.TG_TOKEN != null
         run: |
-          cd build || echo "build folder not found"
+          cd build || { echo "build folder not found"; exit 1; }
 
           TG_CHAT="@rvc_magisk"
           NL=$'\n'
           APKS=""
           MODULES=""
-          for OUTPUT in *revanced*; do
+          for OUTPUT in *; do
             DL_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/download/${{ steps.next_ver_code.outputs.NEXT_VER_CODE }}/${OUTPUT}"
             if [[ $OUTPUT = *.apk ]]; then
               APKS+="${NL}📦[${OUTPUT}](${DL_URL})"
@@ -130,7 +125,7 @@ jobs:
           MODULES=${MODULES#"$NL"}
           APKS=${APKS#"$NL"}
 
-          BODY="$(sed 's/^\* \*\*/↪ \*\*/g; s/^\* `/↪ \*\*/g; s/`/\*/g; s/^\* /\↪/g; s/\*\*/\*/g; s/###//g;' ../build.md)"
+          BODY="$(sed 's/^\* \*\*/↪ \*\*/g; s/^\* `/↪ \*\*/g; s/`/\*/g; s/^\* /\↪/g; s/\*\*/\*/g; s/###//g; s/^- /↪ /g; /^==/d;' ../build.md)"
           MSG="*New build!*
 
           ${BODY}
