@@ -165,7 +165,7 @@ if music_t=$(toml_get_table "Music"); then music_mode=$(toml_get "$music_t" "bui
 if [ "$youtube_mode" != module ] || [ "$music_mode" != module ]; then
 	log "\nInstall [Vanced MicroG](https://github.com/inotia00/VancedMicroG/releases) or [mMicroG](https://github.com/inotia00/mMicroG/releases) to be able to use non-root YouTube or YouTube-Music"
 fi
-log "\n[Main Repo](https://github.com/NoName-exe/revanced-extended)"
+log "\n[Main Repo](https://github.com/vuong2023/revanced-extended)"
 log "\n---\nChangelog:"
 log "$(cat $TEMP_DIR/*-rv/changelog.md)"
 
