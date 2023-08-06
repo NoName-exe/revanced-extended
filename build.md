@@ -1,5 +1,5 @@
-YouTube: 18.29.38  
 Music (arm64-v8a): 6.13.52  
+YouTube: 18.30.37  
 Music (arm-v7a): 6.13.52  
 
 Install [Vanced MicroG](https://github.com/inotia00/VancedMicroG/releases) or [mMicroG](https://github.com/inotia00/mMicroG/releases) to be able to use non-root YouTube or YouTube-Music  
@@ -9,43 +9,36 @@ Install [Vanced MicroG](https://github.com/inotia00/VancedMicroG/releases) or [m
 ---
 Changelog:  
 CLI: inotia00/revanced-cli-2.22.2-all.jar  
-Integrations: inotia00/revanced-integrations-0.114.12.apk  
-Patches: inotia00/revanced-patches-2.186.12.jar  
+Integrations: inotia00/revanced-integrations-0.115.1.apk  
+Patches: inotia00/revanced-patches-2.187.1.jar  
 
 YouTube
 ==
-- feat(youtube): add `hide-latest-videos-button` patch [ScreenShot](https://imgur.com/a/VT7Rd2L)
-- feat(youtube/enable-old-quality-layout): match with the official Revanced
-- feat(youtube/enable-new-thumbnail-preview): forcibly disable when the switch is off
-- feat(youtube/hide-comment-component): `hide preview comment` hides the dots of live comments [ScreenShot](https://imgur.com/a/THMek2L)
-- feat(youtube/hide-general-ads): update filter
-- feat(youtube/settings): remove github link in the settings https://github.com/inotia00/ReVanced_Extended/issues/1278
-- feat(youtube/spoof-app-version): add 18.09.39 to version list [to revert new library tab ui](https://github.com/inotia00/ReVanced_Extended/issues/630)
-- fix(youtube): some dependence is missing https://github.com/inotia00/ReVanced_Extended/issues/1291
-- fix(youtube/enable-new-splash-animation): remove android version restriction
-- refactor(youtube/litho): filter litho components using prefix tree
+- feat(youtube): add support version `v18.30.37`
+- feat(youtube/hide-button-container): now it support versions other than YouTube v18.20.39 https://github.com/ReVanced/revanced-patches/pull/2723
+- fix(youtube/integration): move dependence to dummy class path
+- fix(youtube/microg-support): app does not close when an error occurs
+- fix(youtube/microg-support): error toast message is not set correctly
 - feat(youtube/translations): update translation
-`Arabic`, `Bengali`, `Brazilian`, `Chinese Simplified`, `Chinese Traditional`, `French`, `German`, `Greek`, `Hungarian`, `Indonesian`, `Italian`, `Japanese`, `Korean`, `Polish`, `Romanian`, `Russian`, `Spanish`, `Turkish`, `Ukrainian`, `Vietnamese`
-feat(youtube/language-switch): add a new type of string
+`Belarusian`, `Bulgarian`, `Chinese Traditional`, `French`, `German`, `Greek`, `Hungarian`, `Indonesian`, `Italian`, `Japanese`, `Polish`, `Russian`, `Vietnamese`
 
 
-YouTube Music
+Music
 ==
-- refactor(music/litho): filter litho components using prefix tree
+- feat(music): add `hide-channel-guidelines` patch
+- feat(music/litho): add some exception
+- feat(music/enable-new-layout): change default value
+- feat(music/enable-new-layout): forcibly disable when the switch is off
+- feat(music/enable-sleep-timer): forcibly disable when the switch is off
 - feat(music/translations): update translation
-`Czech`, `Indonesian`, `Polish`, `Russian`, `Ukrainian`
+`Brazilian`, `Chinese Traditional`, `French`, `Indonesian`, `Korean`, `Russian`, `Spanish`, `Ukrainian`, `Vietnamese`
 
 
 Etc
 ==
-- final release will be rolled out next week
+- At the end of this release, RVX has been [discontinued](https://github.com/inotia00/revanced-documentation/wiki/Announcement). Thank you for using it so far.
 
 
-※ Compatible ReVanced Manager: [RVX Manager v1.5.1 (fork)](https://github.com/inotia00/revanced-manager/releases/tag/v1.5.1)
-
-[Crowdin translation]
-- [YouTube/European Countries](https://crowdin.com/project/revancedextendedeu)
-- [YouTube/Other Countries](https://crowdin.com/project/revancedextended)
-- [YT Music](https://crowdin.com/project/revanced-music-extended)
+※ Compatible ReVanced Manager: [RVX Manager v1.5.2 (fork)](https://github.com/inotia00/revanced-manager/releases/tag/v1.5.2)
 
 ---  
