@@ -3,7 +3,6 @@ enable-magisk-update = true   # set this to false if you do not want to receive 
 build-mindetach-module = false
 patches-source = "YT-Advanced/ReX-patches"
 integrations-source = "YT-Advanced/ReX-integrations"
-cli-source = "inotia00/revanced-cli"
 rv-brand = "ReVanced eXtended"
 
 # add 'enabled = false' for not patching a specific app or remove it from the config
