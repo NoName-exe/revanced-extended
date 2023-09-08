@@ -18,13 +18,13 @@ Get the [latest CI release](https://github.com/NoName-exe/revanced-extended/rele
      * Support Magisk and KernelSU.
 
  ## Notes
-* Use [mindetach](https://github.com/j-hc/mindetach-magisk) to block Play Store from updating YouTube and YouTube-Music.
+* Use [mindetach](https://github.com/j-hc/mindetach-magisk) or [zygisk-detach](https://github.com/j-hc/zygisk-detach) to block Play Store from updating YouTube and YouTube-Music.
 * Non-root versions of YouTube and YouTube-Music require [Vanced MicroG](https://github.com/inotia00/VancedMicroG/releases/latest) or [mMicroG](https://github.com/inotia00/mMicroG/releases/latest) to work.
 
 ## Credits
-[j-hc](https://github.com/j-hc) for [mindetach](https://github.com/j-hc/mindetach-magisk) and the [script on which this is based on](https://github.com/j-hc/revanced-magisk-module).
+[j-hc](https://github.com/j-hc) for [mindetach](https://github.com/j-hc/mindetach-magisk), [zygisk-detach](https://github.com/j-hc/zygisk-detach) and the [script on which this is based on](https://github.com/j-hc/revanced-magisk-module).
 
-[YT-Advanced](https://github.com/YT-Advanced) for [rex-patches](https://github.com/YT-Advanced/ReX-patches)
+[YT-Advanced](https://github.com/YT-Advanced) for [rex-patches](https://github.com/YT-Advanced/ReX-patches).
 
 [inotia00](https://github.com/inotia00) for [Vanced MicroG](https://github.com/inotia00/VancedMicroG) and [mMicroG](https://github.com/inotia00/mMicroG).
 
