@@ -24,8 +24,6 @@ Get the [latest CI release](https://github.com/NoName-exe/revanced-extended/rele
 ## Credits
 [j-hc](https://github.com/j-hc) for [mindetach](https://github.com/j-hc/mindetach-magisk), [zygisk-detach](https://github.com/j-hc/zygisk-detach) and the [script on which this is based on](https://github.com/j-hc/revanced-magisk-module).
 
-[YT-Advanced](https://github.com/YT-Advanced) for [rex-patches](https://github.com/YT-Advanced/ReX-patches).
-
-[inotia00](https://github.com/inotia00) for [Vanced MicroG](https://github.com/inotia00/VancedMicroG) and [mMicroG](https://github.com/inotia00/mMicroG).
+[inotia00](https://github.com/inotia00) for [revanced-extended patches](https://github.com/inotia00/revanced-patches),[Vanced MicroG](https://github.com/inotia00/VancedMicroG) and [mMicroG](https://github.com/inotia00/mMicroG).
 
 [Gnad Gnaoh](https://github.com/gnadgnaoh) for helping me figure some stuff out.
