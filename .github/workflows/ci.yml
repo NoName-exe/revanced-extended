@@ -42,7 +42,7 @@ jobs:
 
           is_patches_latest() {
             declare -A sources
-            sources["ReVanced/revanced-patches"]=1
+            sources["inotia00/revanced-patches"]=1
             for table_name in $(toml_get_table_names); do
                 if [ -z "$table_name" ]; then continue; fi
                 t=$(toml_get_table "$table_name")
