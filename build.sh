@@ -113,7 +113,9 @@ for table_name in $(toml_get_table_names); do
 	app_args[rv_brand]=$(toml_get "$t" rv-brand) || app_args[rv_brand]="$DEF_RV_BRAND"
 
 	app_args[excluded_patches]=$(toml_get "$t" excluded-patches) || app_args[excluded_patches]=""
+	if [ -n "${app_args[excluded_patches]}" ] && [[ "${app_args[excluded_patches]}" != *'"'* ]]; then abort "patch names inside excluded-patches must be quoted"; fi
 	app_args[included_patches]=$(toml_get "$t" included-patches) || app_args[included_patches]=""
+	if [ -n "${app_args[included_patches]}" ] && [[ "${app_args[included_patches]}" != *'"'* ]]; then abort "patch names inside included-patches must be quoted"; fi
 	app_args[exclusive_patches]=$(toml_get "$t" exclusive-patches) && vtf "${app_args[exclusive_patches]}" "exclusive-patches" || app_args[exclusive_patches]=false
 	app_args[version]=$(toml_get "$t" version) || app_args[version]="auto"
 	app_args[app_name]=$(toml_get "$t" app-name) || app_args[app_name]=$table_name
@@ -137,8 +139,16 @@ for table_name in $(toml_get_table_names); do
 		app_args[apkmirror_dlurl]=${app_args[apkmirror_dlurl]%/}
 		app_args[dl_from]=apkmirror
 	} || app_args[apkmirror_dlurl]=""
+	app_args[archive_dlurl]=$(toml_get "$t" archive-dlurl) && {
+		app_args[archive_dlurl]=${app_args[archive_dlurl]%/}
+		app_args[dl_from]=archive
+	} || app_args[archive_dlurl]=""
 	if [ -z "${app_args[dl_from]:-}" ]; then abort "ERROR: no 'apkmirror_dlurl', 'uptodown_dlurl' or 'apkmonk_dlurl' option was set for '$table_name'."; fi
 	app_args[arch]=$(toml_get "$t" apkmirror-arch) || app_args[arch]="universal"
+	if [ "${app_args[arch]}" != "both" ] && [ "${app_args[arch]}" != "universal" ] && [[ "${app_args[arch]}" != "arm64-v8a"* ]] && [[ "${app_args[arch]}" != "arm-v7a"* ]]; then
+		abort "wrong arch '${app_args[arch]}' for '$table_name'"
+	fi
+
 	app_args[include_stock]=$(toml_get "$t" include-stock) || app_args[include_stock]=true && vtf "${app_args[include_stock]}" "include-stock"
 	app_args[merge_integrations]=$(toml_get "$t" merge-integrations) || app_args[merge_integrations]=true && vtf "${app_args[merge_integrations]}" "merge-integrations"
 	app_args[dpi]=$(toml_get "$t" apkmirror-dpi) || app_args[dpi]="nodpi"
@@ -170,7 +180,10 @@ if [ -z "$(ls -A1 ${BUILD_DIR})" ]; then abort "All builds failed."; fi
 if youtube_t=$(toml_get_table "YouTube"); then youtube_mode=$(toml_get "$youtube_t" "build-mode") || youtube_mode="apk"; else youtube_mode="module"; fi
 if music_t=$(toml_get_table "Music"); then music_mode=$(toml_get "$music_t" "build-mode") || music_mode="apk"; else music_mode="module"; fi
 if [ "$youtube_mode" != module ] || [ "$music_mode" != module ]; then
-	log "\nInstall [Vanced MicroG](https://github.com/inotia00/VancedMicroG/releases) or [mMicroG](https://github.com/inotia00/mMicroG/releases) to be able to use non-root YouTube or YouTube-Music"
+	log "\nInstall [Vanced MicroG](https://github.com/inotia00/VancedMicroG/releases) or [mMicroG](https://github.com/inotia00/mMicroG/releases) to be able to use non-root YouTube or YouTube-Music."
+fi
+if [ "$youtube_mode" != apk ] || [ "$music_mode" != apk ]; then
+	log "Use [mindetach](https://github.com/j-hc/mindetach-magisk) or [zygisk-detach](https://github.com/j-hc/zygisk-detach) to block Play Store from updating YouTube and YouTube-Music.
 fi
 log "\n[Main Repo](https://github.com/NoName-exe/revanced-extended)"
 log "\nChangelog:"
