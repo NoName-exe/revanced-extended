@@ -183,7 +183,7 @@ if [ "$youtube_mode" != module ] || [ "$music_mode" != module ]; then
 	log "\nInstall [Vanced MicroG](https://github.com/inotia00/VancedMicroG/releases) or [mMicroG](https://github.com/inotia00/mMicroG/releases) to be able to use non-root YouTube or YouTube-Music."
 fi
 if [ "$youtube_mode" != apk ] || [ "$music_mode" != apk ]; then
-	log "Use [mindetach](https://github.com/j-hc/mindetach-magisk) or [zygisk-detach](https://github.com/j-hc/zygisk-detach) to block Play Store from updating YouTube and YouTube-Music.
+	log "Use [mindetach](https://github.com/j-hc/mindetach-magisk) or [zygisk-detach](https://github.com/j-hc/zygisk-detach) to block Play Store from updating YouTube and YouTube-Music."
 fi
 log "\n[Main Repo](https://github.com/NoName-exe/revanced-extended)"
 log "\nChangelog:"
