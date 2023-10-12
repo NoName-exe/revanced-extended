@@ -1,1 +1,15 @@
-[]
+[
+    {
+      "patchName": "Custom package name",
+      "options": [
+        {
+          "key": "YouTubePackageName",
+          "value": "yt.rvx.noname.exe"
+        },
+        {
+          "key": "MusicPackageName",
+          "value": "ytm.rvxnoname.exe"
+        }
+      ]
+    }
+  ]
