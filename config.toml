@@ -7,12 +7,14 @@ rv-brand = "ReVanced eXtended"
 # add 'enabled = false' for not patching a specific app or remove it from the config
 # see https://github.com/j-hc/revanced-magisk-module/blob/main/CONFIG.md for more detailed explanations
 
+# you can use rvmm-config-gen to generate a config
+
 [YouTube]
-build-mode = "both"                                                   # 'both', 'apk' or 'module'
-excluded-patches = ""                                                 # whitespace seperated list of patches to exclude (multiline strings are not supported)
-included-patches = ""                                                 # whitespace seperated list of patches to include
-version = "auto"                                                      # 'auto', 'latest' or a custom one like '17.40.41'
-exclusive-patches = false                                             # excludes all patches by default
+build-mode = "both"                                                   
+excluded-patches = ""                                                 
+included-patches = ""                                                 
+version = "auto"                                                      
+exclusive-patches = false                                             
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
 module-prop-name = "yt-rvx"
 
