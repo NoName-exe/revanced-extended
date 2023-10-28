@@ -1,15 +1,17 @@
+        
 [
-    {
-      "patchName": "Custom package name",
-      "options": [
-        {
-          "key": "YouTubePackageName",
-          "value": "yt.rvx.noname.exe"
-        },
-        {
-          "key": "MusicPackageName",
-          "value": "ytm.rvx.noname.exe"
-        }
-      ]
-    }
-  ]
+  {
+    "patchName": "Custom package name",
+    "options": [
+      {
+        "key": "PackageNameYouTube",
+        "value": "yt.rvx.noname.exe"
+      },
+      {
+        "key": "PackageNameYouTubeMusic",
+        "value": "ytm.rvx.noname.exe"
+      }
+    ]
+  }
+]
+        
