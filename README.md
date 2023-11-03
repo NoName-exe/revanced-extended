@@ -1,4 +1,4 @@
-#### ⚠️ Do not download modules from 3rd party sources like random websites you found on Google. There are many that uses my modules and impersonates ReVanced.
+#### ⚠️ Do not download modules from 3rd party sources like random websites you found on Google. There are many that uses my modules and impersonate ReVanced.
 
 # ReVanced eXtended
 [![CI](https://github.com/NoName-exe/revanced-extended/actions/workflows/ci.yml/badge.svg?event=schedule)](https://github.com/NoName-exe/revanced-extended/actions/workflows/ci.yml)
@@ -8,7 +8,8 @@ Get the [latest CI release](https://github.com/NoName-exe/revanced-extended/rele
 ## Features
  * Updated with the latest versions of patches.
  * Cleans APKs from unneeded libs to make them smaller.
- * Fully open-source, every binary or APK is compiled without human intervention.
+ * Fully open-source
+ * APKs are build by CI
  * Modules:
      * Recompile invalidated odex for YouTube and YouTube-Music for faster usage.
      * Receive updates from Magisk app.
