@@ -146,7 +146,7 @@ for table_name in $(toml_get_table_names); do
 		app_args[dl_from]=archive
 	} || app_args[archive_dlurl]=""
 	if [ -z "${app_args[dl_from]:-}" ]; then abort "ERROR: no 'apkmirror_dlurl', 'uptodown_dlurl' or 'apkmonk_dlurl' option was set for '$table_name'."; fi
-	app_args[arch]=$(toml_get "$t" apkmirror-arch) || app_args[arch]="all"
+	app_args[arch]=$(toml_get "$t" arch) || app_args[arch]="all"
 	if [ "${app_args[arch]}" != "both" ] && [ "${app_args[arch]}" != "all" ] && [[ "${app_args[arch]}" != "arm64-v8a"* ]] && [[ "${app_args[arch]}" != "arm-v7a"* ]]; then
 		abort "wrong arch '${app_args[arch]}' for '$table_name'"
 	fi
@@ -179,14 +179,8 @@ wait
 rm -rf temp/tmp.*
 if [ -z "$(ls -A1 ${BUILD_DIR})" ]; then abort "All builds failed."; fi
 
-if youtube_t=$(toml_get_table "YouTube"); then youtube_mode=$(toml_get "$youtube_t" "build-mode") || youtube_mode="apk"; else youtube_mode="module"; fi
-if music_t=$(toml_get_table "Music"); then music_mode=$(toml_get "$music_t" "build-mode") || music_mode="apk"; else music_mode="module"; fi
-if [ "$youtube_mode" != module ] || [ "$music_mode" != module ]; then
-	log "\nInstall [Vanced MicroG](https://github.com/inotia00/VancedMicroG/releases) or [mMicroG](https://github.com/inotia00/mMicroG/releases) to be able to use non-root YouTube or YouTube-Music."
-fi
-if [ "$youtube_mode" != apk ] || [ "$music_mode" != apk ]; then
-	log "Use [mindetach](https://github.com/j-hc/mindetach-magisk) or [zygisk-detach](https://github.com/j-hc/zygisk-detach) to block Play Store from updating YouTube and YouTube-Music."
-fi
+log "\nInstall [Vanced Microg](https://github.com/inotia00/VancedMicroG/releases) or [mMicroG](https://github.com/inotia00/mMicroG/releases) to be able to use non-root YouTube or YouTube-Music."
+log "Use [mindetach](https://github.com/j-hc/mindetach-magisk) or [zygisk-detach](https://github.com/j-hc/zygisk-detach) to block Play Store from updating YouTube and YouTube-Music."
 log "\n[Main Repo](https://github.com/NoName-exe/revanced-extended)"
 log "\nChangelog:"
 log "$(cat $TEMP_DIR/*-rv/changelog.md)"
