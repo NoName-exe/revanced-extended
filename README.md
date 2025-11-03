@@ -28,3 +28,4 @@ Get the [latest CI release](https://github.com/NoName-exe/revanced-extended/rele
 [inotia00](https://github.com/inotia00) for [revanced-extended patches](https://github.com/inotia00/revanced-patches).
 
 [Gnad Gnaoh](https://github.com/gnadgnaoh) for helping me figure some stuff out.
+
