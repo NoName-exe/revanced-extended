@@ -18,13 +18,11 @@ Get the [latest CI release](https://github.com/NoName-exe/revanced-extended/rele
 
  ## Notes
 * Use [zygisk-detach](https://github.com/j-hc/zygisk-detach) to block Play Store from updating YouTube and YouTube-Music.
-* Non-root versions of YouTube and YouTube-Music require [MicroG](https://github.com/ReVanced/GmsCore/releases) to work.
+* Non-root versions of YouTube and YouTube-Music require [MicroG](https://github.com/MorpheApp/MicroG-RE) to work.
 
 ## Credits
 [j-hc](https://github.com/j-hc) for [zygisk-detach](https://github.com/j-hc/zygisk-detach) and the [script on which this is based on](https://github.com/j-hc/revanced-magisk-module).
 
-[ReVanced Team](https://github.com/revanced) for [MicroG](https://github.com/ReVanced/GmsCore/releases).
-
-[inotia00](https://github.com/inotia00) for [revanced-extended patches](https://github.com/inotia00/revanced-patches).
+[Morphe Team](https://github.com/MorpheApp) for [MicroG](https://github.com/MorpheApp/MicroG-RE) and their [patches](https://github.com/MorpheApp/morphe-patches).
 
 [Gnad Gnaoh](https://github.com/gnadgnaoh) for helping me figure some stuff out.

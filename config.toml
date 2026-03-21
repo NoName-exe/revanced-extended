@@ -1,6 +1,7 @@
-enable-magisk-update = true   # set this to false if you do not want to receive updates for the module in magisk app
-patches-source = "inotia00/revanced-patches"
-rv-brand = "ReVanced eXtended"
+enable-module-update = true # set this to false if you do not want to receive updates for the module
+patches-source = "MorpheApp/morphe-patches"
+cli-source = "MorpheApp/morphe-cli"
+rv-brand = "Morphe"
 parallel-jobs = 1
 
 # add 'enabled = false' for not patching a specific app or remove it from the config
@@ -9,23 +10,23 @@ parallel-jobs = 1
 # you can use rvmm-config-gen to generate a config
 
 [YouTube]
-build-mode = "both"                                                   
-excluded-patches = ""                                                 
-included-patches = "" 
-patcher-args = " -e 'GmsCore support' -OpackageNameYouTube='yt.rvx.noname.exe' "
-version = "auto"                                                      
-exclusive-patches = false                                             
+build-mode = "both"
+included-patches = "'Change package name'"
+excluded-patches = "'Enable debugging'"                                                   
+patcher-args = "-e 'Change package name' -OpackageName=yt.morphe.noname.exe"
+version = "auto"                                                             
+archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.youtube"                                    
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
-module-prop-name = "yt-rvx"
+module-prop-name = "yt-morphe"
 
 [Music]
 arch = "both"
 build-mode = "both"
 app-name = "YouTube-Music"
-excluded-patches = ""
-included-patches = ""
-patcher-args = " -e 'GmsCore support' -OpackageNameYouTubeMusic='ytm.rvx.noname.exe' "
+included-patches = "'Change package name'"
+excluded-patches = "'Enable debugging'"                                                   
+patcher-args = "-e 'Change package name' -OpackageName=ytm.morphe.noname.exe"
 version = "auto"
+archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.youtube.music"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
-module-prop-name = "ytm-rvx"
-
+module-prop-name = "ytm-morphe"
