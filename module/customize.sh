@@ -169,8 +169,8 @@ if [ "$KSU" ]; then
 	if [ "$UID" ]; then
 		if ! OP=$("${MODPATH:?}/bin/$ARCH/ksu_profile" "$UID" "$PKG_NAME" 2>&1); then
 			ui_print "  $OP"
-			ui_print "  In your root manager app,"
-			ui_print "  disable 'Unmount modules' for $PKG_NAME"
+			ui_print "  - In your root manager app,"
+			ui_print "    disable 'Unmount modules' for $PKG_NAME"
 		fi
 	else
 		ui_print "ERROR: UID could not be found for $PKG_NAME"
@@ -178,3 +178,4 @@ if [ "$KSU" ]; then
 fi
 
 rm -rf "${MODPATH:?}/bin" "$MODPATH/stock/"
+cp -f "$MODPATH/module.prop" "$MODPATH/module.prop.orig"
