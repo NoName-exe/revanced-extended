@@ -57,7 +57,13 @@ abort() {
 	kill -9 -- -$$ 2>/dev/null
 	exit 1
 }
-java() { env -i java --enable-native-access=ALL-UNNAMED "$@"; }
+java() {
+	if [ "${JAVA_HOME_21_X64-}" ]; then
+		env -i JAVA_HOME="$JAVA_HOME_21_X64" "$JAVA_HOME_21_X64"/bin/java --enable-native-access=ALL-UNNAMED "$@"
+	else
+		env -i java --enable-native-access=ALL-UNNAMED "$@"
+	fi
+}
 
 get_prebuilts() {
 	local cli_src=$1 cli_ver=$2 patches_src=$3 patches_ver=$4
@@ -191,7 +197,7 @@ config_update() {
 			elif [ "$PATCHES_VER" = "latest" ]; then
 				last_patches=$(gh_req "$rv_rel/latest" -) || continue
 			else
-				last_patches=$(gh_req "$rv_rel/tags/${ver}" -) || continue
+				last_patches=$(gh_req "$rv_rel/tags/${PATCHES_VER}" -) || continue
 			fi
 			if ! last_patches=$(jq -e -r '.assets[] | select(.name | (endswith("asc") or endswith("json")) | not) | .name' <<<"$last_patches"); then
 				abort "config_update error: '$last_patches'"
@@ -231,6 +237,7 @@ _req() {
 	fi
 	if ! curl -L -c "$TEMP_DIR/cookie.txt" -b "$TEMP_DIR/cookie.txt" --connect-timeout 10 --retry 1 --fail -s -S "$@" "$ip" -o "$dlp"; then
 		epr "Request failed: $ip"
+		if [ "$dlp" != - ]; then rm -f "$dlp"; fi
 		return 1
 	fi
 	if [ "$dlp" != - ]; then
@@ -310,14 +317,14 @@ patches_list_versions() {
 		return
 	fi
 
-	epr "Could not list versions $cli_jar: '$op'"
+	epr "Could not list versions ($pkg_name) $cli_jar: '$op'"
 	return 1
 }
 patches_list() {
 	local cli_jar=$1 patches_jar=$2 pkg_name=$3 op
 	if ! op=$(java -jar "$cli_jar" list-patches -p "$patches_jar" --filter-package-name "$pkg_name" --versions --packages -b 2>&1); then
 		if ! op=$(java -jar "$cli_jar" list-patches --patches "$patches_jar" -f "$pkg_name" --with-versions --with-packages 2>&1); then
-			epr "Could not get patches list $cli_jar: '$op'"
+			epr "Could not get patches list ($pkg_name) $cli_jar: '$op'"
 			return 1
 		fi
 
