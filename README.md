@@ -1,7 +1,10 @@
 #### ⚠️ Do not download modules from 3rd party sources like random websites you found on Google. There are many that uses my modules and impersonates ReVanced.
 
 # ReVanced eXtended
-[![CI](https://github.com/NoName-exe/revanced-extended/actions/workflows/ci.yml/badge.svg?event=schedule)](https://github.com/NoName-exe/revanced-extended/actions/workflows/ci.yml)
+
+[![CI](https://img.shields.io/github/actions/workflow/status/NoName-exe/revanced-extended/ci.yml?branch=main&style=for-the-badge&label=ci)](https://github.com/NoName-exe/revanced-extended/actions/workflow/status/ci.yml?branch=main&style=for-the-badge&label=ci)
+[![GitHub last release](https://img.shields.io/github/release-date/NoName-exe/revanced-extended?style=for-the-badge&label=latest%20Release)](https://github.com/NoName-exe/revanced-extended/releases)
+[![Total Downloads](https://img.shields.io/github/downloads/NoName-exe/revanced-extended/total?label=Downloads&style=for-the-badge)](https://github.com/NoName-exe/revanced-extended/releases)
 
 Get the [latest CI release](https://github.com/NoName-exe/revanced-extended/releases/latest).
 
